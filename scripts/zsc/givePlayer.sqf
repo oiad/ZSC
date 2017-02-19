@@ -19,7 +19,7 @@ if (isPlayer cursorTarget) then {
 		call GivePlayerDialogAmounts;
 	};
 } else {
-	"You are not looking correctly at a player" call dayz_rollingMessages;
+	"You are not looking at a player." call dayz_rollingMessages;
 };
 
 dayz_actionInProgress = false;

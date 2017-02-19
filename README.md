@@ -54,9 +54,9 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # dayz_server folder install:
 
-1. Replace or merge the contents of server_handleSafeGear.sqf provided with your original copy.
+1. Replace or merge the contents of <code>server_handleSafeGear.sqf</code> provided with your original copy.
 
-2. Replace or merge the contents of server_updateObject.sqf provided with your original copy.
+2. Replace or merge the contents of <code>server_updateObject.sqf</code> provided with your original copy.
 
 # Battleye filters install:
 
@@ -64,4 +64,9 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	```sqf
 	!="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	```
+	
+So it will then look like this for example:
+	```sqf
+	5 "createDialog" <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
 	```

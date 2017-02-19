@@ -6,7 +6,8 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Install:
 
-This install basically assumes you have NO custom variables.sqf or compiles.sqf, I would recommend diffmerging where possible. 
+* This install basically assumes you have NO custom variables.sqf or compiles.sqf, I would recommend diffmerging where possible. 
+* This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. YOU WILL NEED TO EDIT THESE IF YOU DO NOT WANT OVERWATCH.
 
 **[>> Download <<] (https://github.com/oiad/ZSC/archive/master.zip)**
 
@@ -47,7 +48,7 @@ This install basically assumes you have NO custom variables.sqf or compiles.sqf,
 
 # Battleye filters install:
 
-1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> add this to the end of it:
+1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
 
 	```sqf
 	!="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"

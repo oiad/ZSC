@@ -4,7 +4,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	(original install url: https://github.com/EpochSC/SingleCurrencyStorage)
 	(original discussion url: https://epochmod.com/forum/topic/28493-alpha-release-single-currency-30-storage-default-hive-no-global-banking/)
 	
-* Tested as working on a blank Epoch 1.0.6+ and OverWatch 0.25 server (THIS IS FOR OVERWATCH!).
+* Tested as working on a blank Epoch 1.0.6+ and OverWatch 0.25 server ***(THIS IS FOR OVERWATCH!)***.
 * Designed to minimize duping/glitching of bank related saving with nearby players (checkWallet etc).
 * Lots of code snippets taken from the original Zupa release thread to stop multiple people checking wallet/depositing into the same safe etc.
 * Does not support depositing/withdrawing from vehicles, since I only wanted my players to trade with unlocked lockboxes/safes. You can change this if you like.

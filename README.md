@@ -1,9 +1,9 @@
 # [EPOCH 1.0.6+] Zupa Single Currency
-	Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
-	Discussion URL: https://epochmod.com/forum/topic/43331-zsc-for-epoch-106-and-overwatch-025/
+Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
+Discussion URL: https://epochmod.com/forum/topic/43331-zsc-for-epoch-106-and-overwatch-025/
 
-	(original install url: https://github.com/EpochSC/SingleCurrencyStorage)
-	(original discussion url: https://epochmod.com/forum/topic/28493-alpha-release-single-currency-30-storage-default-hive-no-global-banking/)
+(original install url: https://github.com/EpochSC/SingleCurrencyStorage)
+(original discussion url: https://epochmod.com/forum/topic/28493-alpha-release-single-currency-30-storage-default-hive-no-global-banking/)
 	
 * Tested as working on a blank Epoch 1.0.6+ and OverWatch 0.25 server ***(THIS IS FOR OVERWATCH!)***.
 * Designed to minimize duping/glitching of bank related saving with nearby players (checkWallet etc).

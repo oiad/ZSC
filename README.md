@@ -12,7 +12,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 # Install:
 
 * This install basically assumes you have NO custom variables.sqf or compiles.sqf or fn_selfActions.sqf, I would recommend diffmerging where possible. 
-* This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. YOU WILL NEED TO EDIT THESE IF YOU DO NOT WANT OVERWATCH.
+* This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. ***YOU WILL NEED TO EDIT THESE IF YOU DO NOT WANT OVERWATCH.***
 
 **[>> Download <<] (https://github.com/oiad/ZSC/archive/master.zip)**
 
@@ -50,7 +50,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	//player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf";
 	```
-	in dayz_code\init\compiles.sqf since it doesn't refresh coins on a skin change. Epoch 1.0.6.1+ fixes this issue so you do not need to uncomment it.
+	in the supplied <code>dayz_code\init\compiles.sqf</code> since it doesn't refresh coins on a skin change. Epoch 1.0.6.1+ fixes this issue so you do not need to uncomment it.
 
 # dayz_server folder install:
 

@@ -3,10 +3,15 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	(original install url: https://github.com/EpochSC/SingleCurrencyStorage)
 	(original discussion url: https://epochmod.com/forum/topic/28493-alpha-release-single-currency-30-storage-default-hive-no-global-banking/)
+	
+* Tested as working on a blank Epoch 1.0.6+ and OverWatch 0.25 server (THIS IS FOR OVERWATCH!).
+* Designed to minimize duping/glitching of bank related saving with nearby players (checkWallet etc).
+* Lots of code snippets taken from the original Zupa release thread to stop multiple people checking wallet/depositing into the same safe etc.
+* Does not support depositing/withdrawing from vehicles, since I only wanted my players to trade with unlocked lockboxes/safes. You can change this if you like.
 
 # Install:
 
-* This install basically assumes you have NO custom variables.sqf or compiles.sqf, I would recommend diffmerging where possible. 
+* This install basically assumes you have NO custom variables.sqf or compiles.sqf or fn_selfActions.sqf, I would recommend diffmerging where possible. 
 * This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. YOU WILL NEED TO EDIT THESE IF YOU DO NOT WANT OVERWATCH.
 
 **[>> Download <<] (https://github.com/oiad/ZSC/archive/master.zip)**
@@ -39,6 +44,8 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```
 
 5. Replace your original description.ext with the one provided or merge the contents if you have modified your own version.
+
+6. If you are running Epoch 1.0.6 and NOT running Epoch 1.0.6.1+ you must uncomment: <code>//player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf";</code> in dayz_code\init\compiles.sqf since it doesn't refresh coins on a skin change. Epoch 1.0.6.1+ fixes this issue so you do not need to run it.
 
 # dayz_server folder install:
 

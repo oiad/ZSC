@@ -67,6 +67,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```
 	
 So it will then look like this for example:
+
 	```sqf
 	5 "createDialog" <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
 	```

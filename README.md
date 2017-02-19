@@ -45,7 +45,12 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 5. Replace your original description.ext with the one provided or merge the contents if you have modified your own version.
 
-6. If you are running Epoch 1.0.6 and NOT running Epoch 1.0.6.1+ you must uncomment: <code>//player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf";</code> in dayz_code\init\compiles.sqf since it doesn't refresh coins on a skin change. Epoch 1.0.6.1+ fixes this issue so you do not need to run it.
+6. If you are running Epoch 1.0.6 and NOT running Epoch 1.0.6.1+ you must uncomment: 
+
+	```sqf
+	//player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf";
+	```
+	in dayz_code\init\compiles.sqf since it doesn't refresh coins on a skin change. Epoch 1.0.6.1+ fixes this issue so you do not need to uncomment it.
 
 # dayz_server folder install:
 

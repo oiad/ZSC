@@ -3,7 +3,6 @@ BankDialogPlayerBalance = 13001;
 BankDialogBankBalance = 13002;
 GivePlayerDialogTransferAmount = 14000;
 GivePlayerDialogPlayerBalance = 14001;
-ZSC_MaxMoneyInStorageMultiplier = 50000;
 
 BankDialogUpdateAmounts = {
 	private ["_vehicleType","_displayName","_sizeOfMoney"];
@@ -11,6 +10,7 @@ BankDialogUpdateAmounts = {
 	_vehicleType = typeOf ZSC_CurrentStorage;
 	if (isClass(configFile >> "CfgVehicles" >> _vehicleType)) then {
 		_vehicleMagazines = getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "transportMaxMagazines");
+		if (_vehicleMagazines == 0) then {_vehicleMagazines = ZSC_defaultStorageMultiplier};
 		_displayName = getText (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");
 		_sizeOfMoney = _vehicleMagazines * ZSC_MaxMoneyInStorageMultiplier;
 		ctrlSetText [2701, format ["%1",_displayName]];

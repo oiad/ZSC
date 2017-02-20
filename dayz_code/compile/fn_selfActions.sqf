@@ -951,7 +951,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 		s_player_checkWallet = -1;
 	};
 	
-	if ((_typeOfCursorTarget in DZE_UnLockedStorage) && {player distance _cursorTarget < 5}) then {
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
 		if (s_bank_dialog < 0) then {
 			s_bank_dialog = player addAction [format ["<t color=""#0096FF"">Access bank</t>"], "scripts\zsc\bankDialog.sqf",_cursorTarget, 1, true, true];
 		};

@@ -19,25 +19,25 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Mission folder install:
 
-1. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";</code> Add directly below:
+1. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";</code> and add directly below:
 
 	```sqf
 	call compile preprocessFileLineNumbers "dayz_code\init\variables.sqf";
 	```
 	
-2. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";</code> Add directly below:
+2. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";</code> and add directly below:
 
 	```sqf
 	call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";
 	```
 
-3. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "server_traders.sqf";</code> Replace with:
+3. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "server_traders.sqf";</code> and replace with:
 
 	```sqf
 	call compile preprocessFileLineNumbers "scripts\traders\server_traders.sqf";
 	```
 
-4. In mission\init.sqf find: <code>waitUntil {scriptDone progress_monitor};</code> Add directly above:
+4. In mission\init.sqf find: <code>waitUntil {scriptDone progress_monitor};</code> and add directly above:
 
 	```sqf
 	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
@@ -59,6 +59,42 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 2. Replace or merge the contents of <code>server_updateObject.sqf</code> provided with your original copy.
 
+# Adding other classnames to the list of DZE_MoneyStorageClasses:
+
+1. In <code>dayz_code\init\variables.sqf</code> find: <code>DZE_MoneyStorageClasses = DZE_LockableStorage;</code> and replace with:
+
+	```sqf
+	DZE_MoneyStorageClasses = DZE_LockableStorage + ["Plastic_Pole_EP1_DZ"];
+	```
+
+# Using vehicles to store coins ONLY:
+
+1. In <code>scripts\zsc\bankDialog.sqf</code> find: <code>if !(_typeOf in DZE_MoneyStorageClasses) exitWith {</code> and replace with:
+
+	```sqf
+	if !(ZSC_CurrentStorage isKindOf "AllVehicles") exitWith {
+	```
+	
+2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: <code>if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {</code> replace with:
+
+	```sqf
+	if (_isVehicle && {!locked _cursorTarget} && {_isAlive} && {player distance _cursorTarget < 5}) then {
+	```
+
+# Using vehicles AND DZE_MoneyStorageClasses to store coins:
+
+1. In <code>scripts\zsc\bankDialog.sqf</code> find: <code>if !(_typeOf in DZE_MoneyStorageClasses) exitWith {</code> and replace with:
+
+	```sqf
+	if ((!(_typeOf in DZE_MoneyStorageClasses) && !(cursortarget isKindOf "AllVehicles"))) exitWith {}
+	```
+	
+2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: <code>if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {</code> replace with:
+
+	```sqf
+	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {systemchat "yes"};
+	```
+	
 # Battleye filters install:
 
 1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:

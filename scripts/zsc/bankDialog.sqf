@@ -8,7 +8,7 @@ _isBusy = true;
 ZSC_CurrentStorage = _this select 3;
 _typeOf = typeOf ZSC_CurrentStorage;
 
-if !(_typeOf in DZE_UnLockedStorage) exitWith {
+if !(_typeOf in DZE_MoneyStorageClasses) exitWith {
 	dayz_actionInProgress = false;
 	player setVariable["isBusy",false,true];
 	format ["%1 is not available for banking",_typeOf] call dayz_rollingMessages;

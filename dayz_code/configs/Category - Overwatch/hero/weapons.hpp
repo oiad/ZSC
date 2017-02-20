@@ -1,4 +1,4 @@
-class Category_627 {
+class Category_477 {
 	class G36_C_SD_camo {
 		type = "trade_weapons";
 		buy[] = {10000,"worth"};
@@ -78,6 +78,16 @@ class Category_627 {
 		type = "trade_weapons";
 		buy[] = {600000,"worth"};
 		sell[] = {100000,"worth"};
+	};
+	class USSR_cheytacM200 {
+		type = "trade_weapons";
+		buy[] = {600000,"worth"};
+		sell[] = {100000,"worth"};
+	};
+	class USSR_cheytacM200_sd {
+		type = "trade_weapons";
+		buy[] = {800000,"worth"};
+		sell[] = {120000,"worth"};
 	};
 	class PipeBomb {
 		type = "trade_items";

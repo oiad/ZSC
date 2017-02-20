@@ -1,4 +1,4 @@
-class Category_577 {
+class Category_478 {
 	class 100Rnd_762x51_M240 {
 		type = "trade_items";
 		buy[] = {2000,"worth"};
@@ -78,5 +78,30 @@ class Category_577 {
 		type = "trade_items";
 		buy[] = {50000,"worth"};
 		sell[] = {30000,"worth"};
+	};
+	class USSR_5Rnd_408 {
+		type = "trade_items";
+		buy[] = {20000,"worth"};
+		sell[] = {8000,"worth"};
+	};
+	class FHQ_rem_5Rnd_300Win_XM2010_NT {
+		type = "trade_items";
+		buy[] = {8000,"worth"};
+		sell[] = {3000,"worth"};
+	};
+	class FHQ_rem_5Rnd_300Win_XM2010_NT_SD {
+		type = "trade_items";
+		buy[] = {9000,"worth"};
+		sell[] = {4000,"worth"};
+	};
+	class FHQ_rem_7Rnd_338Lapua_MSR_NT {
+		type = "trade_items";
+		buy[] = {8000,"worth"};
+		sell[] = {3000,"worth"};
+	};
+	class FHQ_rem_7Rnd_338Lapua_MSR_NT_SD {
+		type = "trade_items";
+		buy[] = {9000,"worth"};
+		sell[] = {4000,"worth"};
 	};
 };

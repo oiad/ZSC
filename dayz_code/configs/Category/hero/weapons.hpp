@@ -79,16 +79,6 @@ class Category_477 {
 		buy[] = {600000,"worth"};
 		sell[] = {100000,"worth"};
 	};
-	class USSR_cheytacM200 {
-		type = "trade_weapons";
-		buy[] = {600000,"worth"};
-		sell[] = {100000,"worth"};
-	};
-	class USSR_cheytacM200_sd {
-		type = "trade_weapons";
-		buy[] = {800000,"worth"};
-		sell[] = {120000,"worth"};
-	};
 	class PipeBomb {
 		type = "trade_items";
 		buy[] = {800000,"worth"};

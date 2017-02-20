@@ -5,15 +5,16 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * original install url: https://github.com/EpochSC/SingleCurrencyStorage
 * original discussion url: https://epochmod.com/forum/topic/28493-alpha-release-single-currency-30-storage-default-hive-no-global-banking/
 	
-* Tested as working on a blank Epoch 1.0.6+ and OverWatch 0.25 server ***(THIS IS FOR OVERWATCH!)***.
+* Tested as working on a blank Epoch 1.0.6+ and OverWatch 0.25 server.
 * Designed to minimize duping/glitching of bank related saving with nearby players (checkWallet etc).
 * Lots of code snippets taken from the original Zupa release thread to stop multiple people checking wallet/depositing into the same safe etc.
-* Does not support depositing/withdrawing from vehicles, since I only wanted my players to trade with unlocked lockboxes/safes. You can change this if you like.
+* Supports multiple configuration types, Safes/lockboxes only, vehicles only, safes/lockboxes AND vehicles.
+* No global banking.
 
 # Install:
 
 * This install basically assumes you have NO custom variables.sqf or compiles.sqf or fn_selfActions.sqf, I would recommend diffmerging where possible. 
-* This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. ***YOU WILL NEED TO EDIT THESE IF YOU DO NOT WANT OVERWATCH.***
+* This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. You will need to install the specific version you want to use, See install notes further down.
 
 **[>> Download <<] (https://github.com/oiad/ZSC/archive/master.zip)**
 
@@ -59,9 +60,13 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 2. Replace or merge the contents of <code>server_updateObject.sqf</code> provided with your original copy.
 
+# Changing from default epoch CfgTraders to OverWatch CfgTraders:
+
+1. In <code>dayz_code\configs</code> move or delete the folder <code>Category</code> and the file <code>cfgServerTrader.hpp</code> and rename <code>Category - Overwatch to <code>Category</code> and </code><code>cfgServerTrader - Overwatch.hpp</code> to <code>cfgServerTrader.hpp</code>
+
 # Adding other classnames to the list of DZE_MoneyStorageClasses:
 
-1. In <code>dayz_code\init\variables.sqf</code> find: <code>DZE_MoneyStorageClasses = DZE_LockableStorage;</code> and replace with:
+1. In <code>dayz_code\init\variables.sqf</code> find: <code>DZE_MoneyStorageClasses = DZE_LockableStorage;</code> and replace with (using Plastic_Pole_EP1_DZ as an example):
 
 	```sqf
 	DZE_MoneyStorageClasses = DZE_LockableStorage + ["Plastic_Pole_EP1_DZ"];

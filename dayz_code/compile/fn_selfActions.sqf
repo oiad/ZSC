@@ -14,7 +14,7 @@ private ["_canPickLight","_text","_dir","_canDoThis","_w2m","_bb","_waterHoles",
 "_isModular","_isModularDoor","_isHouse","_isGate","_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock",
 "_ownerPID","_speed","_dog","_vehicle","_inVehicle","_cursorTarget","_primaryWeapon","_currentWeapon","_magazinesPlayer","_onLadder","_canDo",
 "_nearLight","_vehicleOwnerID","_hasHotwireKit","_isPZombie","_dogHandle","_allowedDistance","_id","_upgrade","_weaponsPlayer","_hasCrowbar",
-"_allowed","_hasAccess","_uid"];
+"_allowed","_hasAccess","_uid","_isAnimal"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
@@ -940,7 +940,9 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 	};
 	*/
 	
-	// Custom mods below
+	// Custom below
+	
+	_isAnimal = _cursorTarget isKindOf "Animal";
 	
 	if (_isMan && {!_isAlive} && {!_isAnimal} && {player distance _cursorTarget < 5}) then {
 		if (s_player_checkWallet < 0) then {

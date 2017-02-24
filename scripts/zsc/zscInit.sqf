@@ -37,9 +37,7 @@ BankDialogWithdrawAmount = {
 	_displayName = getText (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");
 
 	if (!isNull ZSC_CurrentStorage) then {
-		if ((_amount < 1) or {_amount > _bank}) exitWith {
-			format ["You can not withdraw more %1 than is in the %2.",CurrencyName,_displayName] call dayz_rollingMessages;
-		};
+		if ((_amount < 1) or {_amount > _bank}) exitWith {format ["You can not withdraw more %1 than is in the %2.",CurrencyName,_displayName] call dayz_rollingMessages;};
 
 		player setVariable[Z_MoneyVariable,(_wealth + _amount),true];
 		ZSC_CurrentStorage setVariable[Z_MoneyVariable,(_bank - _amount),true];

@@ -97,7 +97,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: <code>if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {</code> replace with:
 
 	```sqf
-	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {systemchat "yes"};
+	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
 	```
 	
 # Battleye filters install:

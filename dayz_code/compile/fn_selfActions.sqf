@@ -958,7 +958,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 			s_bank_dialog = player addAction [format ["<t color=""#0096FF"">Access bank</t>"], "scripts\zsc\bankDialog.sqf",_cursorTarget, 1, true, true];
 		};
 	} else {
-     	player removeAction s_bank_dialog;
+		player removeAction s_bank_dialog;
 		s_bank_dialog = -1;
 	};
 	

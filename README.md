@@ -21,6 +21,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 # REPORTING ERRORS/PROBLEMS
 
 1. Please, if you report issues can you please attach (on pastebin or similar) your CLIENT rpt log file as this helps find out the errors very quickly. To find this logfile:
+
 	```sqf
 	C:\users\<YOUR WINDOWS USERNAME>\AppData\Local\Arma 2 OA\ArmA2OA.RPT
 	```

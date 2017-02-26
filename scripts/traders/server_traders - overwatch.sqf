@@ -6,14 +6,14 @@ serverTraders = [
 
 // Hero Vendor
 menu_RU_Functionary1 = [
-	[["Attachments",693],["Ammunition",478],["Currency and gems",1100],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477]],
+	[["Attachments",693],["Ammunition",478],["Currency and gems",1100],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["LMG Variants",1008],["Sniper Variants",1001]],
 	[],
 	"hero"
 ];
 
 // Bandit Traders
 menu_GUE_Soldier_MG = [
-	[["Attachments",693],["Ammunition",577],["Currency and gems",1100],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627]],
+	[["Attachments",693],["Ammunition",577],["Currency and gems",1100],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["LMG Variants",1008],["Sniper Variants",1001]],
 	[],
 	"hostile"
 ];
@@ -26,13 +26,13 @@ menu_RU_Citizen3 = [
 ];
 // Weapons neutral
 menu_Rocker4 = [
-	[["Attachments",693],["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488]],
+	[["Attachments",693],["HK416 Variants",1004],["HK417 Variants",1002],["AK Variants",1003],["G3 Variants",1007],["Masada Variants",1009],["SCAR Variants",1011],["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488]],
 	[],
 	"neutral"
 ];
 // neutral Vehicles
 menu_Profiteer4 = [
-	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks",495],["Used Cars",585],["Utility Vehicles",565]],
+	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks",495],["Used Cars",585],["Utility Vehicles",565],["Cop cars",1012],["Nissan 350z",1013]],
 	[],
 	"neutral"
 ];
@@ -44,7 +44,7 @@ menu_Rita_Ensler_EP1 = [
 ];
 // Weapons neutral
 menu_CIV_EuroMan01_EP1 = [
-	[["Attachments",693],["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488]],
+	[["Attachments",693],["HK416 Variants",1004],["HK417 Variants",1002],["AK Variants",1003],["G3 Variants",1007],["Masada Variants",1009],["SCAR Variants",1011],["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488]],
 	[],
 	"neutral"
 ];
@@ -63,13 +63,13 @@ menu_TK_GUE_Soldier_5_EP1 = [
 
 // Aircraft Dealer
 menu_Worker2 = [
-	[["Airplanes",517],["Currency and gems",1100],["Helicopter Unarmed",519]],
+	[["Airplanes",517],["Currency and gems",1100],["Helicopter Unarmed",519],["Overwatch Camels (Armed)",1014]],
 	[],
 	"neutral"
 ];
 // Vehicles Neutral
 menu_Worker3 = [
-	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks",495],["Used Cars",585],["Utility Vehicles",565]],
+	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks",495],["Used Cars",585],["Utility Vehicles",565],["Cop cars",1012],["Nissan 350z",1013]],
 	[],
 	"neutral"
 ];
@@ -81,7 +81,7 @@ menu_Woodlander1 = [
 ];
 // neutral Vehicles 2
 menu_UN_CDF_Soldier_Pilot_EP1 = [
-	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks Unarmed",535],["Used Cars",585],["Utility Vehicles",565]],
+	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks Unarmed",535],["Used Cars",585],["Utility Vehicles",565],["Cop cars",1012],["Nissan 350z",1013]],
 	[],
 	"neutral"
 ];
@@ -123,7 +123,7 @@ menu_RU_Villager3 = [
 ];
 // Weapons neutral 2
 menu_TK_CIV_Takistani04_EP1 = [
-	[["Attachments",693],["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488]],
+	[["Attachments",693],["HK416 Variants",1004],["HK417 Variants",1002],["AK Variants",1003],["G3 Variants",1007],["Masada Variants",1009],["SCAR Variants",1011],["Assault Rifle",485],["Light Machine Gun",486],["Pistols",489],["Shotguns and Single-shot",574],["Sniper Rifle",487],["Submachine Guns",488]],
 	[],
 	"neutral"
 ];
@@ -135,7 +135,7 @@ menu_Pilot_EP1 = [
 ];
 // Vehicles Neutral 2
 menu_RU_Profiteer4 = [
-	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks",495],["Used Cars",585],["Utility Vehicles",565]],
+	[["Bikes and ATV",608],["Buses and Vans",563],["Cargo Trucks",564],["Fuel Trucks",492],["Military Unarmed",491],["Trucks",495],["Used Cars",585],["Utility Vehicles",565],["Cop cars",1012],["Nissan 350z",1013]],
 	[],
 	"neutral"
 ];
@@ -165,7 +165,7 @@ menu_HouseWife1 = [
 ];
 // Black market
 menu_GUE_Woodlander2 = [
-	[["Attachments",693],["Currency and gems",1100],["Black Market Ammo",527],["Black Market Weapons",526],["Explosives",529]],
+	[["Attachments",693],["Currency and gems",1100],["Overwatch Ammo",1006],["Black Market Ammo",527],["Black Market Weapons",526],["Explosives",529]],
 	[],
 	"neutral"
 ];

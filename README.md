@@ -79,13 +79,23 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Using vehicles to store coins ONLY:
 
-1. In <code>scripts\zsc\bankDialog.sqf</code> find: <code>if !(_typeOf in DZE_MoneyStorageClasses) exitWith {</code> and replace with:
+1. In <code>scripts\zsc\bankDialog.sqf</code> find:
+	```sqf
+	if !(_typeOf in DZE_MoneyStorageClasses) exitWith {
+	```
+	
+	and replace with:
 
 	```sqf
 	if !(ZSC_CurrentStorage isKindOf "AllVehicles") exitWith {
 	```
 	
-2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: <code>if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {</code> replace with:
+2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
+	```sqf
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
+	```
+	
+	and replace with:
 
 	```sqf
 	if (_isVehicle && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && {player distance _cursorTarget < 5}) then {
@@ -93,13 +103,23 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Using vehicles AND DZE_MoneyStorageClasses to store coins:
 
-1. In <code>scripts\zsc\bankDialog.sqf</code> find: <code>if !(_typeOf in DZE_MoneyStorageClasses) exitWith {</code> and replace with:
+1. In <code>scripts\zsc\bankDialog.sqf</code> find: 
+	```sqf
+	if !(_typeOf in DZE_MoneyStorageClasses) exitWith {
+	```
+	
+	and replace with:
 
 	```sqf
 	if ((!(_typeOf in DZE_MoneyStorageClasses) && !(cursortarget isKindOf "AllVehicles"))) exitWith {
 	```
 	
-2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: <code>if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {</code> replace with:
+2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
+	```sqf
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
+	```
+	
+	and replace with:
 
 	```sqf
 	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {

@@ -66,7 +66,12 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Adding other classnames to the list of DZE_MoneyStorageClasses:
 
-1. In <code>dayz_code\init\variables.sqf</code> find: <code>DZE_MoneyStorageClasses = DZE_LockableStorage;</code> and replace with (using Plastic_Pole_EP1_DZ as an example):
+1. In <code>dayz_code\init\variables.sqf</code> find: 
+	```sqf
+	DZE_MoneyStorageClasses = DZE_LockableStorage;
+	```
+	
+	and replace with (using Plastic_Pole_EP1_DZ as an example):
 
 	```sqf
 	DZE_MoneyStorageClasses = DZE_LockableStorage + ["Plastic_Pole_EP1_DZ"];
@@ -97,7 +102,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: <code>if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {</code> replace with:
 
 	```sqf
-	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
+	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
 	```
 	
 # Battleye filters install:

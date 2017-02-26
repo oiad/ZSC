@@ -62,7 +62,11 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:
 
-1. In <code>dayz_code\configs</code> move or delete the folder <code>Category</code> and the file <code>cfgServerTrader.hpp</code> and rename <code>Category - Overwatch to <code>Category</code> and </code><code>cfgServerTrader - Overwatch.hpp</code> to <code>cfgServerTrader.hpp</code>
+1. In <code>dayz_code\configs</code> move or delete the folder <code>Category</code> and the file <code>cfgServerTrader.hpp</code> 
+
+2. Rename <code>Category - Overwatch</code> to <code>Category</code> 
+
+3. Rename <code>cfgServerTrader - Overwatch.hpp</code> to <code>cfgServerTrader.hpp</code>
 
 # Adding other classnames to the list of DZE_MoneyStorageClasses:
 

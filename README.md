@@ -68,7 +68,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 3. Rename <code>cfgServerTrader - Overwatch.hpp</code> to <code>cfgServerTrader.hpp</code>
 
-4. In <code>scripts\traders\</code> move or delete the file <code>server_traders.sqf</code>
+4. In <code>scripts\traders</code> move or delete the file <code>server_traders.sqf</code>
 
 5. Rename <code>server_traders - overwatch.sqf</code> to <code>server_traders.sqf</code>
 

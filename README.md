@@ -20,25 +20,45 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Mission folder install:
 
-1. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";</code> and add directly below:
+1. In mission\init.sqf find: 
+	```sqf
+	call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
+	```
+	
+	and add directly below:
 
 	```sqf
 	call compile preprocessFileLineNumbers "dayz_code\init\variables.sqf";
 	```
 	
-2. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";</code> and add directly below:
+2. In mission\init.sqf find: 
+	```sqf
+	call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
+	```
+	
+	and add directly below:
 
 	```sqf
 	call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";
 	```
 
-3. In mission\init.sqf find: <code>call compile preprocessFileLineNumbers "server_traders.sqf";</code> and replace with:
+3. In mission\init.sqf find: 
+	```sqf
+	call compile preprocessFileLineNumbers "server_traders.sqf";
+	```
+	
+	and replace with:
 
 	```sqf
 	call compile preprocessFileLineNumbers "scripts\traders\server_traders.sqf";
 	```
 
-4. In mission\init.sqf find: <code>waitUntil {scriptDone progress_monitor};</code> and add directly above:
+4. In mission\init.sqf find: 
+	```sqf
+	waitUntil {scriptDone progress_monitor};
+	```
+	
+	and add directly above:
 
 	```sqf
 	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";

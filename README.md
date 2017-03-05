@@ -136,6 +136,10 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	if (_isVehicle && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && {player distance _cursorTarget < 5}) then {
 	```
+	
+3. #dayz_server folder install:
+
+	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf/code> provided with your original copy.
 
 # Using vehicles AND DZE_MoneyStorageClasses to store coins:
 
@@ -160,6 +164,10 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
 	```
+	
+3. #dayz_server folder install:
+
+	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf/code> provided with your original copy.
 	
 # Battleye filters install:
 

@@ -139,7 +139,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 3. #dayz_server folder install:
 
-	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf/code> provided with your original copy.
+	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.
 
 # Using vehicles AND DZE_MoneyStorageClasses to store coins:
 
@@ -167,7 +167,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 3. #dayz_server folder install:
 
-	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf/code> provided with your original copy.
+	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.
 	
 # Battleye filters install:
 

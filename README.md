@@ -14,7 +14,10 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 # Install:
 
 * This install basically assumes you have NO custom variables.sqf or compiles.sqf or fn_selfActions.sqf, I would recommend diffmerging where possible. 
-* This has all the config traders set up for epoch 1.0.6 items and OverWatch guns/items. You will need to install the specific version you want to use, See install notes further down.
+* This has all the config traders set up for epoch 1.0.6+ items and OverWatch guns/items. You will need to install the specific version you want to use, See install notes further down.
+
+# Epoch 1.0.6.1
+* Please note, to keep things simple I have removed files/information pertaining to 1.0.6, onwards to the future of 1.0.6.1!
 
 **[>> Download <<] (https://github.com/oiad/ZSC/archive/master.zip)**
 
@@ -71,16 +74,10 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
 	execVM "scripts\zsc\playerHud.sqf";
+	[] execVM "dayz_code\compile\remote_message.sqf";
 	```
 
 5. Replace your original description.ext with the one provided or merge the contents if you have modified your own version.
-
-6. If you are running Epoch 1.0.6 and NOT running Epoch 1.0.6.1+ you must uncomment: 
-
-	```sqf
-	//player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf";
-	```
-	in the supplied <code>dayz_code\init\compiles.sqf</code> since it doesn't refresh coins on a skin change. Epoch 1.0.6.1+ fixes this issue so you do not need to uncomment it.
 
 # dayz_server folder install:
 

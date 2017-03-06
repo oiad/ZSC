@@ -146,6 +146,7 @@ if (!isDedicated) then {
 	if (DZE_R3F_WEIGHT) then {execVM "\z\addons\dayz_code\external\R3F_Realism\R3F_Realism_Init.sqf";};
 	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
 	execVM "scripts\zsc\playerHud.sqf";
+	[] execVM "dayz_code\compile\remote_message.sqf";
 	waitUntil {scriptDone progress_monitor};
 	cutText ["","BLACK IN", 3];
 	3 fadeSound 1;

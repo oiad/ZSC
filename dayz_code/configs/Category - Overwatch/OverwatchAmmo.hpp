@@ -29,11 +29,6 @@ class Category_1006 {
 		buy[] = {9000,"worth"};
 		sell[] = {3000,"worth"};
 	};
-	class vil_20Rnd_762x51_G3 {
-		type = "trade_items";
-		buy[] = {6000,"worth"};
-		sell[] = {2000,"worth"};
-	};
 	class vil_32Rnd_uzi {
 		type = "trade_items";
 		buy[] = {6000,"worth"};
@@ -179,11 +174,6 @@ class Category_1006 {
 		buy[] = {9000,"worth"};
 		sell[] = {3000,"worth"};
 	};
-	class 2000Rnd_762x51_M134 {
-		type = "trade_items";
-		buy[] = {90000,"worth"};
-		sell[] = {20000,"worth"};
-	};
 	class 200Rnd_556x45_M249 {
 		type = "trade_items";
 		buy[] = {10000,"worth"};
@@ -197,11 +187,6 @@ class Category_1006 {
 	class 20Rnd_762x51_SB_SCAR {
 		type = "trade_items";
 		buy[] = {10000,"worth"};
-		sell[] = {2000,"worth"};
-	};
-	class 20Rnd_9x39_SP5_VSS {
-		type = "trade_items";
-		buy[] = {8000,"worth"};
 		sell[] = {2000,"worth"};
 	};
 };

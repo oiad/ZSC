@@ -101,7 +101,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 1. In <code>scripts\traders</code> move or delete the file <code>server_traders.sqf</code>
 
-2. Rename <code>server_traders - <map name>.sqf</code> to <code>server_traders.sqf</code>
+2. Rename <code>server_traders - whatever-map-name.sqf</code> to <code>server_traders.sqf</code>
 
 # Adding other classnames to the list of DZE_MoneyStorageClasses:
 

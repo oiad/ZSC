@@ -172,6 +172,24 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.
 	
+# Giving NEW players coins on their first login:
+
+1. In <code>dayz_server\compile\server_playerLogin.sqf</code> find:
+	```sqf
+	PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer,_isInfected,_group,_CharacterCoins,_playerCoins,_BankCoins];
+	```
+	
+	If you want to give the player (so coins are on the body) 5k coins add this line before it:
+	
+	```sqf
+	if (_newPlayer) then {_characterCoins = 5000};
+	```
+	
+	If you want to give the player 5k coins into their bank, add this line instead:
+	```sqf
+	if (_newPlayer) then {_bankCoins = 5000};
+	```	
+	
 # Battleye filters install:
 
 1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:

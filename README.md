@@ -12,9 +12,9 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * To install global banking: https://github.com/oiad/ZSC#changing-to-global-banking
 
 # Thanks to:
-	Zupa for his awesome script being a really good base to start from.
-	JasonTM for getting a working copy of the global banking (https://github.com/worldwidesorrow)
-	kingpapawawa for helping with testing and supplying the bank icon
+* Zupa for his awesome script being a really good base to start from.
+* JasonTM for getting a working copy of the global banking (https://github.com/worldwidesorrow)
+* kingpapawawa for helping with testing and supplying the bank icon
 
 # Install:
 

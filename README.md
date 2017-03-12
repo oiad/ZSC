@@ -85,6 +85,67 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 2. Replace or merge the contents of <code>server_updateObject.sqf</code> provided with your original copy.
 
+# Changing to global banking:
+
+1. Install ZSC as above to use as a base, global banking is a modular based install so ZSC is required.
+
+2. In mission\init.sqf find:
+	```sqf
+	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
+	```
+	
+	and add directly below:
+	```sqf
+	call compile preprocessFileLineNumbers "scripts\zsc\zscATMInit.sqf";
+	```
+
+3. In mission\description.ext find:
+	```sqf
+	#include "dayz_code\configs\zscDialogs.hpp"
+	```
+	
+	and add directly below:
+	```sqf
+	#include "dayz_code\configs\zscATMdialogs.hpp"
+	```
+
+4. In mission\dayz_code\init\compiles.sqf find:
+	```sqf
+	fnc_usec_selfactions = compile preprocessFileLineNumbers "dayz_code\compile\fn_selfActions.sqf";
+	```
+	
+	and add directly below:
+	```sqf
+	player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf"; // This line can be removed when Epoch 1.0.6.2 comes out.
+	```
+	
+5. In mission\dayz_code\init\variables.sqf find:
+	```sqf
+	ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
+	```
+	
+	and add directly below:
+	```sqf
+	Z_bankVariable = "moneySpecial"; // If using single currency this is the variable name used to store object bank wealth.
+	Z_globalVariable = "GlobalMoney"; // If using single currency this is the variable name used to store coins globally.
+	//Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
+
+	ZSC_bankObjects = [""]; // Array of objects that are available for banking (i.e Suitcase, Info_Board_EP1)
+	ZSC_bankTraders = [""]; // Array of trader classnames that are available for banking (i.e RU_Functionary1)
+	ZSC_limitOnBank = true; // Have a limit on the bank? (i.e true or false) limits the global banking to the number below.
+	ZSC_maxBankMoney = 5000000; // Default limit for bank objects.
+	```
+
+6. Copy the following files to your mission folder preserving the directory structure:
+	```sqf
+	dayz_code\compiles\player_humanityMorph.sqf
+	dayz_code\configs\zscATMdialogs.hpp
+	dayz_code\scripts\zsc\images\bank.paa
+	dayz_code\scripts\zsc\atmDialog.sqf
+	dayz_code\scripts\zsc\playerHud.sqf
+	dayz_code\scripts\zsc\zscATMInit.sqf
+	```
+
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:
 
 1. In <code>dayz_code\configs</code> move or delete the folder <code>Category</code> and the file <code>cfgServerTrader.hpp</code> 

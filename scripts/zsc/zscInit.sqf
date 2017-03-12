@@ -1,9 +1,3 @@
-BankDialogTransferAmount = 13000;
-BankDialogPlayerBalance = 13001;
-BankDialogBankBalance = 13002;
-GivePlayerDialogTransferAmount = 14000;
-GivePlayerDialogPlayerBalance = 14001;
-
 BankDialogUpdateAmounts = {
 	private ["_vehicleType","_displayName","_sizeOfMoney"];
 
@@ -14,16 +8,16 @@ BankDialogUpdateAmounts = {
 		_displayName = getText (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");
 		_sizeOfMoney = _vehicleMagazines * ZSC_MaxMoneyInStorageMultiplier;
 		ctrlSetText [2701, format ["%1",_displayName]];
-		ctrlSetText [BankDialogPlayerBalance,format ["%1 %2",[player getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName]];
-		ctrlSetText [BankDialogBankBalance,format ["%1 / %3 %2",[ZSC_CurrentStorage getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName,[_sizeOfMoney] call BIS_fnc_numberText]];
+		ctrlSetText [13001,format ["%1 %2",[player getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName]];
+		ctrlSetText [13002,format ["%1 / %3 %2",[ZSC_CurrentStorage getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName,[_sizeOfMoney] call BIS_fnc_numberText]];
 	} else {
-		ctrlSetText [BankDialogPlayerBalance,format ["Can not get vehicle capacity!","test"]];
-		ctrlSetText [BankDialogBankBalance,format ["Can not get vehicle capacity!","test"]];
+		ctrlSetText [13001,format ["Can not get vehicle capacity!","test"]];
+		ctrlSetText [13002,format ["Can not get vehicle capacity!","test"]];
 	};
 };
 
 GivePlayerDialogAmounts = {
-	ctrlSetText [GivePlayerDialogPlayerBalance, format ["%1 %2",[player getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName]];
+	ctrlSetText [14001, format ["%1 %2",[player getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName]];
 	ctrlSetText [14003,format ["%1",(name ZSC_GiveMoneyTarget)]];
 };
 

@@ -956,6 +956,24 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 		s_givemoney_dialog = -1;
 	};
 
+	if (_isMan && {!(isPlayer _cursorTarget)} && {_typeOfCursorTarget in ZSC_bankTraders} && {!_isPZombie}) then {
+		if (s_bank_dialog1 < 0) then {
+			s_bank_dialog1 = player addAction ["Bank Teller","scripts\zsc\atmDialog.sqf",_cursorTarget,3,true,true];
+		};
+	} else {
+		player removeAction s_bank_dialog1;
+		s_bank_dialog1 = -1;
+	};
+
+	if (_typeOfCursorTarget in ZSC_bankObjects && {player distance _cursorTarget < 5}) then {
+		if (s_bank_dialog2 < 0) then {
+			s_bank_dialog2 = player addAction ["Bank ATM","scripts\zsc\atmDialog.sqf",_cursorTarget,3,true,true];
+		};
+	} else {
+		player removeAction s_bank_dialog2;
+		s_bank_dialog2 = -1;
+	};
+
 	// All Traders
 	if (_isMan && {!(isPlayer _cursorTarget)} && {_typeOfCursorTarget in serverTraders} && {!_isPZombie}) then {
 		if (s_player_parts_crtl < 0) then {
@@ -1177,6 +1195,10 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 	s_givemoney_dialog = -1;
 	player removeAction s_bank_dialog;
 	s_bank_dialog = -1;
+	player removeAction s_bank_dialog1;
+	s_bank_dialog1 = -1;
+	player removeAction s_bank_dialog2;
+	s_bank_dialog2 = -1;
 	player removeAction s_player_checkWallet;
 	s_player_checkWallet = -1;
 };

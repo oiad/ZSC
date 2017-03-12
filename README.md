@@ -241,7 +241,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	if (_isVehicle && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && {player distance _cursorTarget < 5}) then {
 	```
 	
-3. #dayz_server folder install:
+3. dayz_server folder install:
 
 	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.
 
@@ -269,7 +269,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
 	```
 	
-3. #dayz_server folder install:
+3. dayz_server folder install:
 
 	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.
 	

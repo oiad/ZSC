@@ -91,6 +91,20 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 2. Replace or merge the contents of <code>server_updateObject.sqf</code> provided with your original copy.
 
+# Battleye filter install.
+
+1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
+
+	```sqf
+	!="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	```
+	
+	So it will then look like this for example:
+
+	```sqf
+	5 "createDialog" <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	```
+
 # Changing to global banking:
 
 1. Install ZSC as above to use as a base, global banking is a modular based install so ZSC is required.
@@ -151,6 +165,20 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	dayz_code\scripts\zsc\playerHud.sqf
 	dayz_code\scripts\zsc\zscATMInit.sqf
 	```
+	
+7. Battleye filters for global banking:
+
+	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
+	```sqf
+	_dialog = createdialog "atmDialog";
+	```
+
+	So it will then look like this for example:
+
+	```sqf
+	5 "createDialog" <CUT> !"_dialog = createDialog \"BankDialog\";" !"_dialog = createdialog \"GivePlayerDialog\";" !"_dialog = createdialog \"atmDialog\";"
+	```
+
 # Installing NPC based banks (optional)
 
 1. Copy the following directory to your dayz_server folder:
@@ -290,17 +318,3 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	if (_newPlayer) then {_bankCoins = 5000};
 	```	
-	
-# Battleye filters install:
-
-1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
-
-	```sqf
-	!="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
-	```
-	
-	So it will then look like this for example:
-
-	```sqf
-	5 "createDialog" <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
-	```

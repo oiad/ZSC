@@ -9,6 +9,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * Designed to minimize duping/glitching of bank related saving with nearby players (checkWallet etc).
 * Lots of code snippets taken from the original Zupa release thread to stop multiple people checking wallet/depositing into the same safe etc.
 * Supports multiple configuration types, Safes/lockboxes only, vehicles only, safes/lockboxes AND vehicles.
+* Supports any map, currently only has server_traders files for Chernarus (default), napf and tavi.
 * To install global banking: https://github.com/oiad/ZSC#changing-to-global-banking
 
 # Thanks to:

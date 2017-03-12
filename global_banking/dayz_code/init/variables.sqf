@@ -11,7 +11,7 @@ Z_globalVariable = "GlobalMoney"; // If using single currency this is the variab
 //Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
 
 ZSC_bankObjects = [""]; // Array of objects that are available for banking (i.e Suitcase, Info_Board_EP1)
-ZSC_bankTraders = [""]; // Array of trader classnames that are available for banking (i.e RU_Functionary1)
+ZSC_bankTraders = ["Functionary1_EP1_DZ"]; // Array of trader classnames that are available for banking (i.e RU_Functionary1)
 ZSC_limitOnBank = true; // Have a limit on the bank? (i.e true or false) limits the global banking to the number below.
 ZSC_maxBankMoney = 5000000; // Default limit for bank objects.
 

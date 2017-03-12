@@ -150,6 +150,31 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	dayz_code\scripts\zsc\playerHud.sqf
 	dayz_code\scripts\zsc\zscATMInit.sqf
 	```
+# Installing NPC based banks (optional)
+
+1. Copy the following directory to your dayz_server folder:
+	```sqf
+	dayz_server\bankTraders
+	```
+
+2. In mission\init.sqf find this line:
+	```sqf
+	execVM "\z\addons\dayz_server\traders\chernarus11.sqf"; //Add trader agents
+	```
+	
+	add this line directly below:
+	```sqf
+	execVM "\z\addons\dayz_server\bankTraders\chernarus.sqf"; //Add banking agents
+	```
+	You can chose from the following files depending on your map:
+	```sqf
+	chernarus.sqf
+	lingor.sqf
+	namalsk.sqf
+	napf.sqf
+	panthera.sqf
+	tavi.sqf
+	```
 
 # Changing so players don't lose coins on death (PVE weenies)
 

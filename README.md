@@ -9,7 +9,12 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * Designed to minimize duping/glitching of bank related saving with nearby players (checkWallet etc).
 * Lots of code snippets taken from the original Zupa release thread to stop multiple people checking wallet/depositing into the same safe etc.
 * Supports multiple configuration types, Safes/lockboxes only, vehicles only, safes/lockboxes AND vehicles.
-* No global banking.
+* To install global banking: https://github.com/oiad/ZSC#changing-to-global-banking
+
+# Thanks to:
+	Zupa for his awesome script being a really good base to start from.
+	JasonTM for getting a working copy of the global banking (https://github.com/worldwidesorrow)
+	kingpapawawa for helping with testing and supplying the bank icon
 
 # Install:
 
@@ -145,6 +150,15 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	dayz_code\scripts\zsc\playerHud.sqf
 	dayz_code\scripts\zsc\zscATMInit.sqf
 	```
+
+# Changing so players don't lose coins on death (PVE weenies)
+
+1. In mission\dayz_code\init\variables.sqf find:
+	```sqf
+	//Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
+	```
+	
+	Uncomment this line and coins will not be lost on death. You will also need to disable/remove check wallet as then players can get unlimited coins by constantly checking their body.
 
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:
 

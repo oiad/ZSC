@@ -179,7 +179,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	PVCDZ_plr_Login = [_charID,_inventory,_backpack,_survival,_isNew,dayz_versionNo,_model,_isHiveOk,_newPlayer,_isInfected,_group,_CharacterCoins,_playerCoins,_BankCoins];
 	```
 	
-	If you want to give the player (so coins are on the body) 5k coins add this line before it:
+	If you want to give the player (so coins are on the body) 5k coins, add this line before it:
 	
 	```sqf
 	if (_newPlayer) then {_characterCoins = 5000};

@@ -37,7 +37,7 @@ class Category_1100 {
 	class ItemTinBar {
 		type = "trade_items";
 		buy[] = {30000,"worth"};
-		sell[] = {30000,"worth"};
+		sell[] = {30,"worth"};
 	};	
 	class ItemBriefcase100oz {
 		type = "trade_items";

@@ -29,16 +29,6 @@ class Category_527 {
 		buy[] = {400,"worth"};
 		sell[] = {200,"worth"};
 	};
-	class 20Rnd_762x51_B_SCAR {
-		type = "trade_items";
-		buy[] = {6000,"worth"};
-		sell[] = {3000,"worth"};
-	};
-	class 20Rnd_762x51_SB_SCAR {
-		type = "trade_items";
-		buy[] = {1000,"worth"};
-		sell[] = {500,"worth"};
-	};
 	class 100Rnd_556x45_BetaCMag {
 		type = "trade_items";
 		buy[] = {600,"worth"};

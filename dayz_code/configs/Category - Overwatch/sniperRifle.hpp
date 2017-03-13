@@ -74,11 +74,6 @@ class Category_487 {
 		buy[] = {10000,"worth"};
 		sell[] = {6000,"worth"};
 	};
-	class SVD_CAMO {
-		type = "trade_weapons";
-		buy[] = {10000,"worth"};
-		sell[] = {6000,"worth"};
-	};	
 	class SVD_des_EP1 {
 		type = "trade_weapons";
 		buy[] = {10000,"worth"};

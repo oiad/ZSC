@@ -170,7 +170,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
 	```sqf
-	_dialog = createdialog "atmDialog";
+	!"_dialog = createdialog \"atmDialog\";"
 	```
 
 	So it will then look like this for example:

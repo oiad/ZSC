@@ -37,7 +37,7 @@ BankDialogWithdrawAmount = {
 		ZSC_CurrentStorage setVariable[Z_MoneyVariable,(_bank - _amount),true];
 		call player_forceSave;
 
-		PVDZ_veh_Save = [ZSC_CurrentStorage,"gear"];
+		PVDZ_veh_Save = [ZSC_CurrentStorage,"coins"];
 		publicVariableServer "PVDZ_veh_Save";
 
 		format ["You have withdrawn %1 %2 out of the %3",[_amount] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
@@ -75,7 +75,7 @@ BankDialogDepositAmount = {
 	};
 
 	call player_forceSave;
-	PVDZ_veh_Save = [ZSC_CurrentStorage,"gear"];
+	PVDZ_veh_Save = [ZSC_CurrentStorage,"coins"];
 	publicVariableServer "PVDZ_veh_Save";
 };
 

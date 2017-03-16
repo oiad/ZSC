@@ -265,7 +265,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
 	```sqf
-	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && {!(_typeOfCursorTarget in DZE_LockedStorage)} && {player distance _cursorTarget < 5}) then {
 	```
 	
 	and replace with:
@@ -293,7 +293,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
 	```sqf
-	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && {!(_typeOfCursorTarget in DZE_LockedStorage)} && {player distance _cursorTarget < 5}) then {
 	```
 	
 	and replace with:

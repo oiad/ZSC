@@ -149,6 +149,11 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	Z_bankVariable = "moneySpecial"; // If using single currency this is the variable name used to store object bank wealth.
 	Z_globalVariable = "GlobalMoney"; // If using single currency this is the variable name used to store coins globally.
 	//Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
+	
+	/*
+		IMPORTANT: The following 2 variables below are CASE SENSITIVE! If you don't put the object/trader classname EXACTLY how
+		they appear in game, THEY WILL NOT WORK!
+	*/
 
 	ZSC_bankObjects = [""]; // Array of objects that are available for banking (i.e Suitcase, Info_Board_EP1)
 	ZSC_bankTraders = ["Functionary1_EP1_DZ"]; // Array of trader classnames that are available for banking (i.e Functionary1_EP1_DZ)

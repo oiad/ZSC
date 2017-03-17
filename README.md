@@ -93,7 +93,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Battleye filter install.
 
-1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
+1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> add this to the end of it:
 
 	```sqf
 	!="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
@@ -102,7 +102,19 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	So it will then look like this for example:
 
 	```sqf
-	5 "createDialog" <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	5 createDialog <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	```
+
+2. In your config\<yourServerName>\Battleye\scripts.txt around line 10: <code>5 closeDisplay</code> add this to the end of it:
+
+	```sqf
+	!="((ctrlParent (_this select 0)) closeDisplay 9000);"
+	```
+	
+	So it will then look like this for example:
+
+	```sqf
+	5 closeDisplay <CUT> !="((ctrlParent (_this select 0)) closeDisplay 9000);"
 	```
 
 # Changing to global banking:

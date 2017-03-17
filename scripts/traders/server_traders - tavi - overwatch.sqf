@@ -45,7 +45,7 @@ menu_Soldier_Sniper_PMC = [
 ];
 //SUPPLIES
 menu_GUE_Woodlander3 = [
-	[["Building Supplies",678],["Tools",679],["Vehicle Parts",677]],
+	[["Building Supplies",678],["Currency and gems",1100],["Tools",679],["Vehicle Parts",677]],
 	[],
 	"hero"
 ];
@@ -73,14 +73,14 @@ menu_GUE_Woodlander1 = [
 	"hostile"
 ];
 //SUPPLIES
-menu_RU_Worker1 = [
-	[["Building Supplies",662],["Tools",663],["Vehicle Parts",664]],
+menu_RU_Worker1 = [	
+	[["Building Supplies",678],["Currency and gems",1100],["Tools",679],["Vehicle Parts",677]],
 	[],
 	"hostile"
 ];
 //MEDICAl
 menu_Dr_Hladik_EP1 = [
-	[["Chem-lites/Flares",666],["Medical Supplies",665],["Smoke Grenades",668]],
+	[["Chem-lites/Flares",542],["Medical Supplies",541],["Smoke Grenades",543]],
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
 	"hostile"
 ];
@@ -97,13 +97,13 @@ menu_RU_Farmwife5 = [
 
 //MEDICAL
 menu_Doctor = [
-	[["Chem-lites/Flares",666],["Medical Supplies",665],["Smoke Grenades",668]],
+	[["Chem-lites/Flares",542],["Medical Supplies",541],["Smoke Grenades",543]],
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
 	"neutral"
 ];
 //SUPPLIES
 menu_RU_Worker4 = [
-	[["Building Supplies",508],["Tools",510],["Vehicle Parts",509]],
+	[["Building Supplies",678],["Currency and gems",1100],["Tools",679],["Vehicle Parts",677]],
 	[],
 	"neutral"
 ];
@@ -142,7 +142,7 @@ menu_RU_Woodlander4 = [
 	"neutral"
 ];
 menu_Worker4 = [
-	[["Boats Armed",558],["Boats Unarmed",557]],
+	[["Boats Armed",673],["Boats Unarmed",672]],
 	[],
 	"neutral"
 ];
@@ -174,7 +174,7 @@ menu_GUE_Commander = [
 ];
 //AMMUNITION
 menu_GUE_Soldier_CO = [
-	[["Assault Rifle Ammo",643],["Light Machine Gun Ammo",644],["Pistol Ammo",646],["Shotguns and Single-shot Ammo",649],["Sniper Rifle Ammo",647],["Submachine Gun Ammo",648]],
+	[["Assault Rifle Ammo",621],["Light Machine Gun Ammo",622],["Pistol Ammo",625],["Shotguns and Single-shot Ammo",623],["Sniper Rifle Ammo",624],["Submachine Gun Ammo",626]],
 	[],
 	"friendly"
 ];

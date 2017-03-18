@@ -84,5 +84,5 @@ class RscTitles {
 #include "\z\addons\dayz_code\Configs\CfgLoot\CfgLoot.hpp"
 #include "dayz_code\Configs\CfgServerTrader.hpp"
 
-#include "dayz_code\configs\zscdefines.hpp"
+#include "\z\addons\dayz_code\Configs\RscDisplay\ZSCdefines.hpp"
 #include "dayz_code\configs\zscdialogs.hpp"

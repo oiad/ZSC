@@ -19,7 +19,10 @@ ZSC_bankObjects = [""]; // Array of objects that are available for banking (i.e 
 ZSC_bankTraders = ["Functionary1_EP1_DZ"]; // Array of trader classnames that are available for banking (i.e RU_Functionary1)
 ZSC_limitOnBank = true; // Have a limit on the bank? (i.e true or false) limits the global banking to the number below.
 ZSC_maxBankMoney = 5000000; // Default limit for bank objects.
-
+// start of Donater Banks
+ZSC_maxDonatorBank = 8000000;
+ZSC_donator_UID = [] ;
+// end of donator banks
 //Player self-action handles
 dayz_resetSelfActions = {
 	s_player_equip_carry = -1;

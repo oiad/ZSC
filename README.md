@@ -17,25 +17,25 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * JasonTM for getting a working copy of the global banking (https://github.com/worldwidesorrow)
 * kingpapawawa for helping with testing and supplying the bank icon
 
+# Index:
+
+* [Mission folder install](https://github.com/oiad/ZSC#mission-folder-install)
+* [dayz_server folder install](https://github.com/oiad/ZSC#dayz_server-folder-install)
+* [Battleye filter install](https://github.com/oiad/ZSC#battleye-filter-install)
+* [Changing to global banking](https://github.com/oiad/ZSC#changing-to-global-banking)
+* [Installing NPC based banks (optional)](https://github.com/oiad/ZSC#installing-npc-based-banks-optional)
+* [Changing so players don't lose coins on death (PVE weenies)](https://github.com/oiad/ZSC#changing-so-players-dont-lose-coins-on-death-pve-weenies)
+* [Changing from default epoch CfgTraders to OverWatch CfgTraders](https://github.com/oiad/ZSC#changing-from-default-epoch-cfgtraders-to-overwatch-cfgtraders)
+* [Changing from default Chernarus server_traders to any other map](https://github.com/oiad/ZSC#changing-from-default-chernarus-server_traders-to-any-other-map)
+* [Adding other classnames to the list of DZE_MoneyStorageClasses](https://github.com/oiad/ZSC#adding-other-classnames-to-the-list-of-dze_moneystorageclasses)
+* [Using vehicles to store coins ONLY](https://github.com/oiad/ZSC#using-vehicles-to-store-coins-only)
+* [Using vehicles AND DZE_MoneyStorageClasses to store coins](https://github.com/oiad/ZSC#using-vehicles-and-dze_moneystorageclasses-to-store-coins)
+* [Giving NEW players coins on their first login](https://github.com/oiad/ZSC#giving-new-players-coins-on-their-first-login)
+
 # Install:
 
 * This install basically assumes you have NO custom variables.sqf or compiles.sqf or fn_selfActions.sqf, I would recommend diffmerging where possible. 
 * This has all the config traders set up for epoch 1.0.6+ items and OverWatch guns/items. You will need to install the specific version you want to use, See install notes further down.
-
-# Index:
-
-* Mission folder install: https://github.com/oiad/ZSC#mission-folder-install
-* dayz_server folder install: https://github.com/oiad/ZSC#dayz_server-folder-install
-* Battleye filter install: https://github.com/oiad/ZSC#battleye-filter-install
-* Changing to global banking: https://github.com/oiad/ZSC#changing-to-global-banking
-* Installing NPC based banks (optional): https://github.com/oiad/ZSC#installing-npc-based-banks-optional
-* Changing so players don't lose coins on death (PVE weenies): https://github.com/oiad/ZSC#changing-so-players-dont-lose-coins-on-death-pve-weenies
-* Changing from default epoch CfgTraders to OverWatch CfgTraders: https://github.com/oiad/ZSC#changing-from-default-epoch-cfgtraders-to-overwatch-cfgtraders
-* Changing from default Chernarus server_traders to any other map: https://github.com/oiad/ZSC#changing-from-default-chernarus-server_traders-to-any-other-map
-* Adding other classnames to the list of DZE_MoneyStorageClasses: https://github.com/oiad/ZSC#adding-other-classnames-to-the-list-of-dze_moneystorageclasses
-* Using vehicles to store coins ONLY: https://github.com/oiad/ZSC#using-vehicles-to-store-coins-only
-* Using vehicles AND DZE_MoneyStorageClasses to store coins: https://github.com/oiad/ZSC#using-vehicles-and-dze_moneystorageclasses-to-store-coins
-* Giving NEW players coins on their first login: https://github.com/oiad/ZSC#giving-new-players-coins-on-their-first-login
 
 In mission\dayz_code\init\variables.sqf find:
 

@@ -19,7 +19,6 @@ ATMDialogWithdrawAmount = {
 
 	format["You have withdrawn %1 %2.",[_amount] call BIS_fnc_numberText,CurrencyName] call dayz_rollingMessages;
 };
-
 ATMDialogDepositAmount = {
 	private ["_amount","_bank","_wealth"];
 
@@ -29,9 +28,20 @@ ATMDialogDepositAmount = {
 
 	if (_amount > 999999) exitWith {"You can not deposit more than 999,999 coins at once." call dayz_rollingMessages};
 	if (_amount < 1 or {_amount > _wealth}) exitWith {"You can not deposit more than you have." call dayz_rollingMessages};
+// start of Donator Banks n shit 
+	
+if(ZSC_limitOnBank && ((_bank + _amount ) >  ZSC_maxBankMoney )) then {
+	if( (getPlayerUID player in ZSC_donator_UID ) && ((_bank + _amount ) =<  ZSC_maxDonatorBank )) then { 
+		player setVariable[Z_MoneyVariable,(_wealth - _amount),true];
+		player setVariable[Z_bankVariable,(_bank + _amount),true];		
+		format["You have deposited %1 %2.", [_amount] call BIS_fnc_numberText, CurrencyName] call dayz_rollingMessages;			
+	} else {
 
-	if (ZSC_limitOnBank && {(_bank + _amount) > ZSC_maxBankMoney}) then {
-		format["You can only have a max of %1 %2", [ZSC_maxBankMoney] call BIS_fnc_numberText,CurrencyName] call dayz_rollingMessages;
+		format["You can only have a max of %1 %3, donators %2", [ZSC_maxBankMoney] call BIS_fnc_numberText,[ZSC_maxDonatorBank] call BIS_fnc_numberText,CurrencyName]call dayz_rollingMessages;
+	};
+	
+	//end of Donator Banks n shiet
+	
 	} else {
 		player setVariable [Z_MoneyVariable,(_wealth - _amount),true];
 		player setVariable [Z_bankVariable,(_bank + _amount),true];

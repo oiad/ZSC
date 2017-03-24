@@ -37,8 +37,6 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * This install basically assumes you have NO custom variables.sqf or compiles.sqf or fn_selfActions.sqf, I would recommend diffmerging where possible. 
 * This has all the config traders set up for epoch 1.0.6+ items and OverWatch guns/items. You will need to install the specific version you want to use, See install notes further down.
 
-In mission\dayz_code\init\variables.sqf find:
-
 **[>> Download <<] (https://github.com/oiad/ZSC/archive/master.zip)**
 
 # REPORTING ERRORS/PROBLEMS

@@ -284,6 +284,26 @@ class Category_1003 {
 		buy[] = {30000,"worth"};
 		sell[] = {10000,"worth"};
 	};
+	class vil_PMI {
+		type = "trade_weapons";
+		buy[] = {20000,"worth"};
+		sell[] = {10000,"worth"};
+	};
+	class vil_PMIS {
+		type = "trade_weapons";
+		buy[] = {20000,"worth"};
+		sell[] = {10000,"worth"};
+	};
+	class vil_PMI74S {
+		type = "trade_weapons";
+		buy[] = {20000,"worth"};
+		sell[] = {10000,"worth"};
+	};
+	class vil_MPi {
+		type = "trade_weapons";
+		buy[] = {20000,"worth"};
+		sell[] = {10000,"worth"};
+	};
 	class vil_9a91 {
 		type = "trade_weapons";
 		buy[] = {10000,"worth"};

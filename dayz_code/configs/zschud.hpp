@@ -12,7 +12,7 @@
 			type = 13;
 			size = 0.040;
             x = safezoneX + (safezoneW -0.35);
-        	y = safezoneY + 0.45 * safezoneW;
+        	y = safezoneY + 0.43 * safezoneW;
 			w = 0.35; h = 0.20;
 			colorText[] = {1,1,1,1};
 			lineSpacing = 3;

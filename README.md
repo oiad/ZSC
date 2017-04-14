@@ -189,10 +189,10 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	dayz_code\compiles\player_humanityMorph.sqf
 	dayz_code\configs\zscATMdialogs.hpp
-	dayz_code\scripts\zsc\images\bank.paa
-	dayz_code\scripts\zsc\atmDialog.sqf
-	dayz_code\scripts\zsc\playerHud.sqf
-	dayz_code\scripts\zsc\zscATMInit.sqf
+	scripts\zsc\images\bank.paa
+	scripts\zsc\atmDialog.sqf
+	scripts\zsc\playerHud.sqf
+	scripts\zsc\zscATMInit.sqf
 	```
 	
 7. Battleye filters for global banking:

@@ -208,6 +208,21 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	5 "createDialog" <CUT> !"_dialog = createDialog \"BankDialog\";" !"_dialog = createdialog \"GivePlayerDialog\";" !"_dialog = createdialog \"atmDialog\";"
 	```
 
+8. In infiSTARS AHConfig.sqf, If you have the following line set to true:
+	```sqf
+	/*  Check Actions ?       */ _CSA = false;	/* true or false */	/* this checks mousewheel actions */
+	```
+	
+	Then you will need to find this line in AHConfig.sqf:
+	```sqf
+	"r_player_actions2","s_bank_dialog","s_bank_dialog2","s_build_Hedgehog_DZ","s_build_Sandbag1_DZ","s_build_Wire_cat1","s_building_snapping",
+	```
+	
+	And replace it with this line:
+	```sqf
+	"r_player_actions2","s_bank_dialog","s_bank_dialog1","s_bank_dialog2","s_build_Hedgehog_DZ","s_build_Sandbag1_DZ","s_build_Wire_cat1","s_building_snapping",
+	```
+
 # Installing NPC based banks (optional)
 
 1. Copy the following directory to your dayz_server folder:

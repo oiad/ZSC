@@ -355,10 +355,10 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	If you want to give the player (so coins are on the body) 5k coins, add this line before it:
 	
 	```sqf
-	if (_newPlayer) then {_characterCoins = 5000};
+	if (_newPlayer) then {_characterCoins = 5000;};
 	```
 	
 	If you want to give the player 5k coins into their bank, add this line instead:
 	```sqf
-	if (_newPlayer) then {_bankCoins = 5000};
+	if (_newPlayer) then {_bankCoins = 5000;};
 	```	

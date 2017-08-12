@@ -17,7 +17,7 @@ class Category_1011 {
 	class SCAR_L_CQC {
 		type = "trade_weapons";
 		buy[] = {10000,"worth"};
-		sell[] = {8000,"worth"};
+		sell[] = {5000,"worth"};
 	};
 	class SCAR_L_CQC_CCO_SD {
 		type = "trade_weapons";

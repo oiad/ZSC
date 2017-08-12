@@ -51,38 +51,38 @@ class Category_485 {
 	};
 	class SCAR_L_CQC {
 		type = "trade_weapons";
-		buy[] = {7000,"worth"};
-		sell[] = {3000,"worth"};
-	};
-	class SCAR_L_CQC_CCO_SD {
-		type = "trade_weapons";
-		buy[] = {20000,"worth"};
-		sell[] = {8000,"worth"};
-	};
-	class SCAR_L_CQC_Holo {
-		type = "trade_weapons";
-		buy[] = {8000,"worth"};
-		sell[] = {4000,"worth"};
-	};
-	class SCAR_L_CQC_EGLM_Holo {
-		type = "trade_weapons";
 		buy[] = {10000,"worth"};
 		sell[] = {5000,"worth"};
 	};
-	class SCAR_L_STD_EGLM_RCO {
+	class SCAR_L_CQC_CCO_SD {
+		type = "trade_weapons";
+		buy[] = {30000,"worth"};
+		sell[] = {20000,"worth"};
+	};
+	class SCAR_L_CQC_Holo {
 		type = "trade_weapons";
 		buy[] = {20000,"worth"};
-		sell[] = {7000,"worth"};
+		sell[] = {10000,"worth"};
+	};
+	class SCAR_L_CQC_EGLM_Holo {
+		type = "trade_weapons";
+		buy[] = {20000,"worth"};
+		sell[] = {1000,"worth"};
+	};
+	class SCAR_L_STD_EGLM_RCO {
+		type = "trade_weapons";
+		buy[] = {30000,"worth"};
+		sell[] = {10000,"worth"};
 	};
 	class SCAR_L_STD_HOLO {
 		type = "trade_weapons";
-		buy[] = {8000,"worth"};
-		sell[] = {4000,"worth"};
+		buy[] = {20000,"worth"};
+		sell[] = {10000,"worth"};
 	};
 	class SCAR_L_STD_Mk4CQT {
 		type = "trade_weapons";
-		buy[] = {8000,"worth"};
-		sell[] = {4000,"worth"};
+		buy[] = {30000,"worth"};
+		sell[] = {10000,"worth"};
 	};
 	class L85_Holo_DZ {
 		type = "trade_weapons";

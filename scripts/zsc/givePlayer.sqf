@@ -16,6 +16,8 @@ if (isPlayer cursorTarget) then {
 	if (!_isBusy) then {
 		player setVariable["isBusy",true,true];	
 		_dialog = createdialog "GivePlayerDialog";
+		_display = uiNamespace getVariable["zsc_dialogs", displayNull];
+		_display displayCtrl 14002 ctrlSetText(format[localize "STR_ZSC_NO_COINS",CurrencyName]);
 		call GivePlayerDialogAmounts;
 	};
 } else {

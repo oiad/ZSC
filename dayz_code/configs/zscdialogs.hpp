@@ -59,7 +59,7 @@ class GivePlayerDialog
 		};
 		class Title2 : ZSC_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
-			idc = -1;
+			idc = 14002;
 			text = "";
 			colorText[] = {1,1,1,1};
 			x = 0.35;

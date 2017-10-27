@@ -1,4 +1,4 @@
-if (dayz_actionInProgress) exitWith {"You are already performing an action, wait for the current action to finish." call dayz_rollingMessages;};
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
 dayz_actionInProgress = true;
 
 private ["_dialog","_isBusy"];
@@ -17,7 +17,7 @@ if (isPlayer cursorTarget) then {
 		player setVariable["isBusy",true,true];	
 		_dialog = createdialog "GivePlayerDialog";
 		_display = uiNamespace getVariable["zsc_dialogs", displayNull];
-		_display displayCtrl 14002 ctrlSetText(format[localize "STR_ZSC_NO_COINS",CurrencyName]);
+		_display displayCtrl 14002 ctrlSetText(format[localize "STR_ZSC_TRANSFER_COINS",CurrencyName]);
 		call GivePlayerDialogAmounts;
 	};
 } else {

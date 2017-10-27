@@ -3,6 +3,7 @@ class GivePlayerDialog
 	idd = -1;
 	movingenable = 0;
 	enableSimulation = true;
+	onLoad = "uiNamespace setVariable ['zsc_dialogs', _this select 0]";
 	onUnload = "player setVariable['isBusy',false,true];"; 
 	
 	class controlsBackground {
@@ -59,7 +60,7 @@ class GivePlayerDialog
 		class Title2 : ZSC_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = $STR_ZSC_TRANSFER_COINS;
+			text = "";
 			colorText[] = {1,1,1,1};
 			x = 0.35;
 			y = 0.2;

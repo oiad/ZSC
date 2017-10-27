@@ -1,7 +1,7 @@
 ﻿class ZSC_Money_Display {
 	idd = -1;
-    fadeout=0;
-    fadein=0;
+	fadeout = 0;
+	fadein = 0;
 	duration = 20;
 	name= "ZSC_Money_Display";
 	onLoad = "uiNamespace setVariable ['ZSC_Money_Display', _this select 0]";

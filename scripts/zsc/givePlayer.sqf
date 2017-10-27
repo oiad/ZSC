@@ -11,7 +11,7 @@ if (isPlayer cursorTarget) then {
 	_isBusy = ZSC_GiveMoneyTarget getVariable["isBusy",false];
 	if (_isBusy) exitWith {
 		player setVariable ["isBusy",false,true];
-		format ["%1 is already trading, please try again.",name ZSC_GiveMoneyTarget] call dayz_rollingMessages;
+		format [localize "STR_ZSC_ALREADY_TRADING",name ZSC_GiveMoneyTarget] call dayz_rollingMessages;
 	};
 	if (!_isBusy) then {
 		player setVariable["isBusy",true,true];	
@@ -19,7 +19,7 @@ if (isPlayer cursorTarget) then {
 		call GivePlayerDialogAmounts;
 	};
 } else {
-	"You are not looking at a player." call dayz_rollingMessages;
+	localize "STR_ZSC_NOT_PLAYER" call dayz_rollingMessages;
 };
 
 dayz_actionInProgress = false;

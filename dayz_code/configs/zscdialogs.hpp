@@ -29,7 +29,7 @@ class GivePlayerDialog
 		class CashTitle5 : ZSC_RscStructuredText
 		{
 			idc = 2710;
-			text = "You";
+			text = $STR_ZSC_YOU;
 			colorText[] = {0.8784,0.8471,0.651,1};
 			x = 0.39;
 			y = 0.26;
@@ -59,7 +59,7 @@ class GivePlayerDialog
 		class Title2 : ZSC_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Transfer Coins";
+			text = $STR_ZSC_TRANSFER_COINS;
 			colorText[] = {1,1,1,1};
 			x = 0.35;
 			y = 0.2;
@@ -69,7 +69,7 @@ class GivePlayerDialog
 		class DepositButton2 : ZSC_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Give";
+			text = $STR_ZSC_GIVE;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[(ctrlText 14000)] spawn GivePlayerAmount; ((ctrlParent (_this select 0)) closeDisplay 9000);";
 			colorText[] = {0.8784,0.8471,0.651,1};
@@ -90,7 +90,7 @@ class GivePlayerDialog
 		};
 		class CloseButtonKey2 : ZSC_RscButtonMenu {
 			idc = -1;
-			text = "Close";
+			text = $STR_UI_CLOSE;
 			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 9000);";
 			x = 0.35;
 			y = 0.8 - (1 / 25);
@@ -132,7 +132,7 @@ class BankDialog
 		class CashTitle : ZSC_RscText
 		{
 			idc = 2701;
-			text = "Storage";
+			text = $STR_ZSC_STORAGE;
 			colorText[] = {0.8784,0.8471,0.651,1};
 			x = 0.36;
 			y = 0.26;
@@ -165,7 +165,7 @@ class BankDialog
 		class Title : ZSC_RscTitle {
 			colorBackground[] = {0, 0, 0, 0};
 			idc = -1;
-			text = "Storage";
+			text = $STR_ZSC_STORAGE;
 			colorText[] = {1,1,1,1};
 			x = 0.35;
 			y = 0.2;
@@ -176,7 +176,7 @@ class BankDialog
 		class WithdrawButton : ZSC_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Withdraw";
+			text = $STR_ZSC_WITHDRAW;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick = "[(ctrlText 2702)] spawn BankDialogWithdrawAmount; ((ctrlParent (_this select 0)) closeDisplay 9000);";
 			colorText[] = {0.8784,0.8471,0.651,1};
@@ -189,7 +189,7 @@ class BankDialog
 		class DepositButton : ZSC_RscButtonMenu 
 		{
 			idc = -1;
-			text = "Deposit";
+			text = $STR_ZSC_DEPOSIT;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
 			onButtonClick =  "[(ctrlText 2702)] spawn BankDialogDepositAmount; ((ctrlParent (_this select 0)) closeDisplay 9000);";
 			colorText[] = {0.8784,0.8471,0.651,1};
@@ -202,7 +202,7 @@ class BankDialog
 		class CashTitle3 : ZSC_RscStructuredText
 		{
 			idc = 2703;
-			text = "You";
+			text = $STR_ZSC_YOU;
 			colorText[] = {0.8784,0.8471,0.651,1};
 			x = 0.36;
 			y = 0.58;
@@ -223,7 +223,7 @@ class BankDialog
 
 		class CloseButtonKey : ZSC_RscButtonMenu {
 			idc = -1;
-			text = "Close";
+			text = $STR_UI_CLOSE;
 			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 9000);";
 			x = 0.35;
 			y = 0.8 - (1 / 25);

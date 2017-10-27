@@ -11,14 +11,14 @@ BankDialogUpdateAmounts = {
 		ctrlSetText [13001,format ["%1 %2",[player getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName]];
 		ctrlSetText [13002,format ["%1 / %3 %2",[ZSC_CurrentStorage getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName,[_sizeOfMoney] call BIS_fnc_numberText]];
 	} else {
-		ctrlSetText [13001,format ["Can not get vehicle capacity!","test"]];
-		ctrlSetText [13002,format ["Can not get vehicle capacity!","test"]];
+		ctrlSetText [13001,localize "STR_ZSC_VEHICLE_CAPACITY"];
+		ctrlSetText [13002,localize "STR_ZSC_VEHICLE_CAPACITY"];
 	};
 };
 
 GivePlayerDialogAmounts = {
 	ctrlSetText [14001, format ["%1 %2",[player getVariable [Z_MoneyVariable,0]] call BIS_fnc_numberText,CurrencyName]];
-	ctrlSetText [14003,format ["%1",(name ZSC_GiveMoneyTarget)]];
+	ctrlSetText [14003,format ["%1",name ZSC_GiveMoneyTarget]];
 };
 
 BankDialogWithdrawAmount = {
@@ -31,7 +31,7 @@ BankDialogWithdrawAmount = {
 	_displayName = getText (configFile >> "CfgVehicles" >> _vehicleType >> "displayName");
 
 	if (!isNull ZSC_CurrentStorage) then {
-		if ((_amount < 1) or {_amount > _bank}) exitWith {format ["You can not withdraw more %1 than is in the %2.",CurrencyName,_displayName] call dayz_rollingMessages;};
+		if ((_amount < 1) or {_amount > _bank}) exitWith {format [localize "STR_ZSC_WITHDRAW_FAIL",CurrencyName,_displayName] call dayz_rollingMessages;};
 
 		player setVariable[Z_MoneyVariable,(_wealth + _amount),true];
 		ZSC_CurrentStorage setVariable[Z_MoneyVariable,(_bank - _amount),true];
@@ -40,9 +40,9 @@ BankDialogWithdrawAmount = {
 		PVDZ_veh_Save = [ZSC_CurrentStorage,"coins"];
 		publicVariableServer "PVDZ_veh_Save";
 
-		format ["You have withdrawn %1 %2 out of the %3",[_amount] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
+		format [localize "STR_ZSC_WITHDRAW_OK",[_amount] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
 	} else {
-		"Unable to access Money Storage. Please try again." call dayz_rollingMessages;
+		localize "STR_ZSC_UNABLE" call dayz_rollingMessages;
 	};
 };
 
@@ -63,15 +63,15 @@ BankDialogDepositAmount = {
 	_amount = parseNumber (_this select 0);
 	_bank = ZSC_CurrentStorage getVariable [Z_MoneyVariable,0];
 	_wealth = player getVariable[Z_MoneyVariable,0];
-	
-	if ((_amount < 1) or {_amount > _wealth}) exitWith {"You can not deposit more than what you have." call dayz_rollingMessages;};
+
+	if ((_amount < 1) or {_amount > _wealth}) exitWith {format [localize "STR_ZSC_DEPOSIT_FAIL",CurrencyName] call dayz_rollingMessages;};
 
 	if ((_bank + _amount) > _maxCap) then {
-		format ["You can only store a maximum of %1 %2 into the %3.",[_maxCap] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
+		format [localize "STR_ZSC_STORE_FAIL",[_maxCap] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
 	} else {
 		player setVariable[Z_MoneyVariable,(_wealth - _amount),true];
 		ZSC_CurrentStorage setVariable[Z_MoneyVariable,(_bank + _amount),true];
-		format ["You have deposited %1 %2 into the %3.",[_amount] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
+		format [localize "STR_ZSC_DEPOSIT_OK",[_amount] call BIS_fnc_numberText,CurrencyName,_displayName] call dayz_rollingMessages;
 	};
 
 	call player_forceSave;
@@ -88,17 +88,16 @@ GivePlayerAmount = {
 	_isBusy = ZSC_GiveMoneyTarget getVariable ["isBusy",false];
 	_vehicleType = typeOf ZSC_GiveMoneyTarget; 
 
-	if ((_amount < 1) or {_amount > _wealth}) exitWith {"You can not give more than you currently have." call dayz_rollingMessages;};
+	if ((_amount < 1) or {_amount > _wealth}) exitWith {localize "STR_ZSC_GIVE_FAIL" call dayz_rollingMessages;};
 
-	if (!(isPlayer ZSC_GiveMoneyTarget)) exitWith {"You can only give money to a player" call dayz_rollingMessages;};
+	if (!(isPlayer ZSC_GiveMoneyTarget)) exitWith {format [localize "STR_ZSC_GIVE_PLAYER",CurrencyName] call dayz_rollingMessages;};
 
-	if (_isBusy) exitWith {format ["%1 is already trading, please try again.",name ZSC_GiveMoneyTarget] call dayz_rollingMessages;};
+	if (_isBusy) exitWith {format [localize "STR_ZSC_ALREADY_TRADING",name ZSC_GiveMoneyTarget] call dayz_rollingMessages;};
 
 	player setVariable[Z_MoneyVariable,_wealth - _amount,true];
 	ZSC_GiveMoneyTarget setVariable[Z_MoneyVariable,_twealth + _amount,true];
 
 	call player_forceSave;
-	ZSC_GiveMoneyTarget call player_forceSave;
 
-	format ["You gave %1 %2 %3.",name ZSC_GiveMoneyTarget,[_amount] call BIS_fnc_numberText,CurrencyName] call dayz_rollingMessages;
+	format [localize "STR_ZSC_GIVE_OK",name ZSC_GiveMoneyTarget,[_amount] call BIS_fnc_numberText,CurrencyName] call dayz_rollingMessages;
 };

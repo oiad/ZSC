@@ -1,4 +1,4 @@
-if (dayz_actionInProgress) exitWith {"You are already performing an action, wait for the current action to finish." call dayz_rollingMessages;};
+if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
 dayz_actionInProgress = true;
 
 private ["_dialog","_isBusy","_typeOf"];
@@ -10,7 +10,7 @@ _typeOf = typeOf cursorTarget;
 if !(_typeOf in ZSC_bankObjects || _typeOf in ZSC_bankTraders) exitWith {
 	dayz_actionInProgress = false;
 	player setVariable["isBusy",false,true];
-	format ["%1 is not available for banking",_typeOf] call dayz_rollingMessages;
+	format [localize "STR_ZSC_BANKING_NOT_AVAIL",_typeOf] call dayz_rollingMessages;
 };
 
 _dialog = createdialog "atmDialog";

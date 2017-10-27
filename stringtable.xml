@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project name="DayZMission">
+	<Package name="ZSC">
+		<Key ID="STR_ZSC_BANKING_NOT_AVAIL">
+			<English>%1 is not available for banking.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_BANKING_IN_USE">
+			<English>%1 is currently being banked with.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_NO_COINS">
+			<English>%1 has no %2</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_TAKE_COINS">
+			<English>You took %1 %2, ID says %3!</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_ALREADY_TRADING">
+			<English>%1 is already trading, please try again.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_NOT_PLAYER">
+			<English>You are not looking at a player.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_VEHICLE_CAPACITY">
+			<English>Unable to get vehicle capacity.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_WITHDRAW_FAIL">
+			<English>You can not withdraw more %1 than are in the %2.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_WITHDRAW_OK">
+			<English>You have withdrawn %1 %2 out of the %3</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_UNABLE">
+			<English>Unable to access Money Storage. Please try again.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_DEPOSIT_FAIL">
+			<English>You can't deposit more %1 than what you have.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_STORE_FAIL">
+			<English>You can only store a maximum of %1 %2 in the %3.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_DEPOSIT_OK">
+			<English>You have deposited %1 %2 into the %3.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GIVE_FAIL">
+			<English>You can not give more than you currently have.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GIVE_PLAYER">
+			<English>You can only give %1 to a player.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GIVE_OK">
+			<English>You gave %1 %2 %3.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_TRANSFER_COINS">
+			<English>Transfer Coins</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GIVE">
+			<English>Give</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_YOU">
+			<English>You</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_DEPOSIT">
+			<English>Deposit</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_WITHDRAW">
+			<English>Withdraw</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_STORAGE">
+			<English>Storage</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GLOBAL_WITHDRAW">
+			<English>You have withdrawn %1 %2.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GLOBAL_DEPOSIT_FAIL">
+			<English>You can only have a maximum of %1 %2.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GLOBAL_DEPOSIT_OK">
+			<English>You have deposited %1 %2.</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GLOBAL_BANK">
+			<English>Bank</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_GLOBAL_BANKING">
+			<English>Banking</English>
+			<!-- <German></German> -->
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+	</Package>
+</Project>

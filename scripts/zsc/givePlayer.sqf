@@ -1,7 +1,8 @@
 if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
 dayz_actionInProgress = true;
 
-private ["_dialog","_isBusy"];
+disableSerialization;
+private ["_display","_isBusy"];
 
 _isBusy = true;
 player setVariable["isBusy",true,true];
@@ -15,7 +16,7 @@ if (isPlayer cursorTarget) then {
 	};
 	if (!_isBusy) then {
 		player setVariable["isBusy",true,true];	
-		_dialog = createdialog "GivePlayerDialog";
+		createDialog "GivePlayerDialog";
 		_display = uiNamespace getVariable["zsc_dialogs", displayNull];
 		_display displayCtrl 14002 ctrlSetText(format[localize "STR_ZSC_TRANSFER_COINS",CurrencyName]);
 		call GivePlayerDialogAmounts;

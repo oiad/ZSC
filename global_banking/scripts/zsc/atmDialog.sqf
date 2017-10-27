@@ -13,7 +13,7 @@ if !(_typeOf in ZSC_bankObjects || _typeOf in ZSC_bankTraders) exitWith {
 	format [localize "STR_ZSC_BANKING_NOT_AVAIL",_typeOf] call dayz_rollingMessages;
 };
 
-_dialog = createdialog "atmDialog";
+createDialog "atmDialog";
 call AtmDialogUpdateAmounts;
 
 dayz_actionInProgress = false;

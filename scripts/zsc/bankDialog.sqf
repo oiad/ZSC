@@ -1,7 +1,7 @@
 if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
 dayz_actionInProgress = true;
 
-private ["_dialog","_playerNear","_isBusy","_typeOf"];
+private ["_playerNear","_isBusy","_typeOf"];
 
 player setVariable["isBusy",true,true];
 _isBusy = true;
@@ -29,7 +29,7 @@ if (_isBusy) exitwith {
 };
 
 ZSC_CurrentStorage setVariable["isBusy",true,true];
-_dialog = createDialog "BankDialog";
+createDialog "BankDialog";
 call BankDialogUpdateAmounts;
 
 dayz_actionInProgress = false;

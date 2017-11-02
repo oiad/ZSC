@@ -922,7 +922,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 
 	if (_isMan && {!_isAlive} && {!(_cursorTarget isKindOf "Animal")} && {player distance _cursorTarget < 5}) then {
 		if (s_player_checkWallet < 0) then {
-			s_player_checkWallet = player addAction ["Check Wallet","scripts\zsc\checkWallet.sqf",_cursorTarget,0,false,true];
+			s_player_checkWallet = player addAction [localize "STR_ZSC_CHECK_WALLET","scripts\zsc\checkWallet.sqf",_cursorTarget,0,false,true];
 		};
 	} else {
 		player removeAction s_player_checkWallet;
@@ -931,7 +931,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 
 	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && {!(_typeOfCursorTarget in DZE_LockedStorage)} && {player distance _cursorTarget < 5}) then {
 		if (s_bank_dialog < 0) then {
-			s_bank_dialog = player addAction ["Access bank","scripts\zsc\bankDialog.sqf",_cursorTarget,1,true,true];
+			s_bank_dialog = player addAction [localize "STR_ZSC_ACCESS_BANK","scripts\zsc\bankDialog.sqf",_cursorTarget,1,true,true];
 		};
 	} else {
 		player removeAction s_bank_dialog;
@@ -940,7 +940,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 
 	if (_isAlive && {_typeOfCursorTarget in AllPlayers} && {isPlayer _cursorTarget}) then {
 		if (s_givemoney_dialog < 0) then {
-			s_givemoney_dialog = player addAction [format ["Trade %1 with %2",CurrencyName,name _cursorTarget],"scripts\zsc\givePlayer.sqf",_cursorTarget,3,true,true];
+			s_givemoney_dialog = player addAction [format [localize "STR_ZSC_TRADE_COINS",CurrencyName,name _cursorTarget],"scripts\zsc\givePlayer.sqf",_cursorTarget,3,true,true];
 		};
 	} else {
 		player removeAction s_givemoney_dialog;

@@ -161,5 +161,30 @@
 			<!-- <Russian></Russian> -->
 			<!-- <French></French> -->
 		</Key>
+		<Key ID="STR_ZSC_CHECK_WALLET">
+			<English>Check Wallet</English>
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_ACCESS_BANK">
+			<English>Access Bank</English>
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_TRADE_COINS">
+			<English>Trade %1 with %2</English>
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_BANK_TELLER">
+			<English>Bank Teller</English>
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
+		<Key ID="STR_ZSC_BANK_ATM">
+			<English>Bank ATM</English>
+			<!-- <Russian></Russian> -->
+			<!-- <French></French> -->
+		</Key>
 	</Package>
 </Project>

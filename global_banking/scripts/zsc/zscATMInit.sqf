@@ -6,7 +6,7 @@ ATMDialogUpdateAmounts = {
 ATMDialogWithdrawAmount = {
 	private ["_amount","_bank","_wealth"];
 
-	_amount = parseNumber (_this select 0);	
+	_amount = (_this select 0) call fnc_sanitizeInput;	
 	_bank = player getVariable [Z_bankVariable,0];
 	_wealth = player getVariable [Z_moneyVariable,0];
 
@@ -22,7 +22,7 @@ ATMDialogWithdrawAmount = {
 ATMDialogDepositAmount = {
 	private ["_amount","_bank","_wealth"];
 
-	_amount = parseNumber (_this select 0);
+	_amount = (_this select 0) call fnc_sanitizeInput;
 	_bank = player getVariable [Z_bankVariable,0];
 	_wealth = player getVariable [Z_MoneyVariable,0];
 

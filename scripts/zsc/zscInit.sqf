@@ -1,3 +1,18 @@
+fnc_sanitizeInput = {
+	private ["_input","_badChars"];
+
+	_input = _this;
+	_input = toArray (_input);
+	_badChars = [60,62,38,123,125,91,93,59,58,39,96,126,44,46,47,63,124,92,34];
+
+	{
+		_input = _input - [_x];
+	} forEach _badChars;
+	
+	_input = parseNumber (toString (_input));
+	_input
+};
+
 BankDialogUpdateAmounts = {
 	private ["_vehicleType","_displayName","_sizeOfMoney"];
 
@@ -24,7 +39,7 @@ GivePlayerDialogAmounts = {
 BankDialogWithdrawAmount = {
 	private ["_amount","_bank","_wealth","_vehicleType","_displayName"];
 
-	_amount = parseNumber (_this select 0);	
+	_amount = (_this select 0) call fnc_sanitizeInput;
 	_bank = ZSC_CurrentStorage getVariable [Z_MoneyVariable,0];
 	_wealth = player getVariable[Z_MoneyVariable,0];
 	_vehicleType = typeOf ZSC_CurrentStorage;
@@ -60,7 +75,7 @@ BankDialogDepositAmount = {
 		_displayName = "Unknown";
 	};
 
-	_amount = parseNumber (_this select 0);
+	_amount = (_this select 0) call fnc_sanitizeInput;
 	_bank = ZSC_CurrentStorage getVariable [Z_MoneyVariable,0];
 	_wealth = player getVariable[Z_MoneyVariable,0];
 
@@ -82,7 +97,7 @@ BankDialogDepositAmount = {
 GivePlayerAmount = {
 	private ["_amount","_wealth","_twealth","_isBusy"];
 
-	_amount = parseNumber (_this select 0);
+	_amount = (_this select 0) call fnc_sanitizeInput;
 	_wealth = player getVariable[Z_MoneyVariable,0];
 	_twealth = ZSC_GiveMoneyTarget getVariable[Z_MoneyVariable,0];
 	_isBusy = ZSC_GiveMoneyTarget getVariable ["isBusy",false];

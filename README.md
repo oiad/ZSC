@@ -114,13 +114,13 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> add this to the end of it:
 
 	```sqf
-	!="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	!="createDialog \"BankDialog\";" !="createDialog \"GivePlayerDialog\";"
 	```
 	
 	So it will then look like this for example:
 
 	```sqf
-	5 createDialog <CUT> !="_dialog = createDialog \"BankDialog\";" !="_dialog = createdialog \"GivePlayerDialog\";"
+	5 createDialog <CUT> !="createDialog \"BankDialog\";" !="createDialog \"GivePlayerDialog\";"
 	```
 
 2. In your config\<yourServerName>\Battleye\scripts.txt around line 10: <code>5 closeDisplay</code> add this to the end of it:
@@ -205,13 +205,13 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
 	```sqf
-	!"_dialog = createdialog \"atmDialog\";"
+	!"createDialog \"atmDialog\";"
 	```
 
 	So it will then look like this for example:
 
 	```sqf
-	5 "createDialog" <CUT> !"_dialog = createDialog \"BankDialog\";" !"_dialog = createdialog \"GivePlayerDialog\";" !"_dialog = createdialog \"atmDialog\";"
+	5 "createDialog" <CUT> !"createDialog \"BankDialog\";" !"createDialog \"GivePlayerDialog\";" !"createDialog \"atmDialog\";"
 	```
 
 8. In infiSTARS AHConfig.sqf, If you have the following line set to true:

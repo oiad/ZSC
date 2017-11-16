@@ -116,7 +116,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	!="createDialog \"BankDialog\";" !="createDialog \"GivePlayerDialog\";"
 	```
-	
+
 	So it will then look like this for example:
 
 	```sqf
@@ -133,6 +133,18 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	```sqf
 	5 closeDisplay <CUT> !="((ctrlParent (_this select 0)) closeDisplay 9000);"
+	```
+
+3. In your config\<yourServerName>\Battleye\scripts.txt around line 51: <code>5 toString</code> add this to the end of it:
+
+	```sqf
+	!"_input = parseNumber (toString (_input));"
+	```
+	
+	So it will then look like this for example:
+
+	``sqf
+	5 toString <CUT> !"_input = parseNumber (toString (_input));"
 	```
 
 # Changing to global banking:

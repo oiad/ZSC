@@ -32,4 +32,6 @@ ZSC_CurrentStorage setVariable["isBusy",true,true];
 createDialog "BankDialog";
 call BankDialogUpdateAmounts;
 
+waitUntil {!dialog};
+
 dayz_actionInProgress = false;

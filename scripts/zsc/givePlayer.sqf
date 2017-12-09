@@ -25,4 +25,6 @@ if (isPlayer cursorTarget) then {
 	localize "STR_ZSC_NOT_PLAYER" call dayz_rollingMessages;
 };
 
+waitUntil {!dialog};
+
 dayz_actionInProgress = false;

@@ -16,4 +16,6 @@ if !(_typeOf in ZSC_bankObjects || _typeOf in ZSC_bankTraders) exitWith {
 createDialog "atmDialog";
 call AtmDialogUpdateAmounts;
 
+waitUntil {!dialog};
+
 dayz_actionInProgress = false;

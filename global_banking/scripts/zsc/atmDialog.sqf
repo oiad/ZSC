@@ -1,10 +1,9 @@
 if (dayz_actionInProgress) exitWith {localize "str_player_actionslimit" call dayz_rollingMessages;};
 dayz_actionInProgress = true;
 
-private ["_dialog","_isBusy","_typeOf"];
+private ["_typeOf"];
 
 player setVariable["isBusy",true,true];
-_isBusy = true;
 _typeOf = typeOf cursorTarget;
 
 if !(_typeOf in ZSC_bankObjects || _typeOf in ZSC_bankTraders) exitWith {

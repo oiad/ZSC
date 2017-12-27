@@ -85,5 +85,5 @@ class RscTitles {
 #include "dayz_code\Configs\CfgServerTrader.hpp"
 
 #include "\z\addons\dayz_code\Configs\RscDisplay\ZSCdefines.hpp"
+#include "dayz_code\configs\RscDisplay\advancedTrading.hpp"
 #include "dayz_code\configs\zscdialogs.hpp"
-#include "dayz_code\configs\advancedTrading.hpp"

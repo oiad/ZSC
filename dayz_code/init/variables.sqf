@@ -1,8 +1,6 @@
 Z_singleCurrency = true;
 
 DZE_maintainCurrencyRate = 1000;
-Z_bankVariable = "moneySpecial"; // If using single currency this is the variable name used to store object bank wealth.
-Z_globalVariable = "GlobalMoney"; // If using single currency this is the variable name used to store coins globally.
 
 DZE_MoneyStorageClasses = DZE_LockableStorage; // List of classnames that players can bank with. If you want a specific class name added (i.e Plastic_Pole_EP1_DZ) consult the README.md on github.
 ZSC_defaultStorageMultiplier = 200; // Default magazine count for banks objects that don't have storage slots (i.e Suitcase, Info_Board_EP1, Plastic_Pole_EP1_DZ)

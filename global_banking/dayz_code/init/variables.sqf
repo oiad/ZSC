@@ -6,10 +6,6 @@ DZE_MoneyStorageClasses = DZE_LockableStorage; // List of classnames that player
 ZSC_defaultStorageMultiplier = 200; // Default magazine count for banks objects that don't have storage slots (i.e Suitcase, Info_Board_EP1, Plastic_Pole_EP1_DZ)
 ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
 
-Z_bankVariable = "moneySpecial"; // If using single currency this is the variable name used to store object bank wealth.
-Z_globalVariable = "GlobalMoney"; // If using single currency this is the variable name used to store coins globally.
-//Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
-
 /*
 	IMPORTANT: The following 2 variables below are CASE SENSITIVE! If you don't put the object/trader classname EXACTLY how
 	they appear in game, THEY WILL NOT WORK!

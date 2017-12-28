@@ -103,7 +103,6 @@ call compile preprocessFileLineNumbers "dayz_code\init\compiles.sqf";
 progressLoadingScreen 0.25;
 call compile preprocessFileLineNumbers "scripts\traders\server_traders.sqf";
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\chernarus11.sqf"; //Add trader city objects locally on every machine early
-if (dayz_POIs && (toLower worldName == "chernarus")) then {call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf";}; //Add POI objects locally on every machine early
 initialized = true;
 
 setTerrainGrid 25;
@@ -111,6 +110,7 @@ if (dayz_REsec == 1) then {call compile preprocessFileLineNumbers "\z\addons\day
 execVM "\z\addons\dayz_code\system\DynamicWeatherEffects.sqf";
 
 if (isServer) then {
+	if (dayz_POIs && (toLower worldName == "chernarus")) then {call compile preprocessFileLineNumbers "\z\addons\dayz_code\system\mission\chernarus\poi\init.sqf";};
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\system\dynamic_vehicle.sqf";
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\system\server_monitor.sqf";
 	execVM "\z\addons\dayz_server\traders\chernarus11.sqf"; //Add trader agents
@@ -123,20 +123,18 @@ if (isServer) then {
 };
 
 if (!isDedicated) then {
+	if (toLower worldName == "chernarus") then {
+		execVM "\z\addons\dayz_code\system\mission\chernarus\hideGlitchObjects.sqf";
+	};
+	
 	//Enables Plant lib fixes
 	execVM "\z\addons\dayz_code\system\antihack.sqf";
-	
-	if (toLower(worldName) == "chernarus") then {
-		diag_log "WARNING: Clearing annoying benches from Chernarus";
-		([4654,9595,0] nearestObject 145259) setDamage 1;
-		([4654,9595,0] nearestObject 145260) setDamage 1;
-	};
 	
 	if (dayz_townGenerator) then { execVM "\z\addons\dayz_code\compile\client_plantSpawner.sqf"; };
 	execFSM "\z\addons\dayz_code\system\player_monitor.fsm";
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	if (DZE_R3F_WEIGHT) then {execVM "\z\addons\dayz_code\external\R3F_Realism\R3F_Realism_Init.sqf";};
-	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";	
+	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
 	call compile preprocessFileLineNumbers "scripts\zsc\zscATMInit.sqf";
 	execVM "scripts\zsc\playerHud.sqf";
 	[] execVM "dayz_code\compile\remote_message.sqf";

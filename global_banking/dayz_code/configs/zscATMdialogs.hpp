@@ -36,7 +36,7 @@ class ATMDialog {
 			h = 0.2;
 		};
 
-		class RscTextT_1005 : ZSC_RscTextT {
+		class RscTextT_1005 : ZSC_RscText {
 			idc = 23002;
 			text = "";
 			colorText[] = {1,1,1,1};
@@ -101,7 +101,7 @@ class ATMDialog {
 			h = 0.2;
 		};
 
-		class RscTextT_1004 : ZSC_RscTextT {
+		class RscTextT_1004 : ZSC_RscText {
 			idc = 23001;
 			text = "";
 			colorText[] = {1,1,1,1};

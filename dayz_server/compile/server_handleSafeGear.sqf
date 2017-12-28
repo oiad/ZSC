@@ -68,7 +68,7 @@ switch (_status) do {
 		if (Z_singleCurrency) then {_holder setVariable [Z_MoneyVariable,_coins,true];};
 		deleteVehicle _obj;
 		
-		[_weapons,_magazines,_backpacks,_holder] call server_addCargo;
+		[_weapons,_magazines,_backpacks,_holder] call fn_addCargo;
 	};
 	case 1: { //Locking
 		_lockedClass = getText (configFile >> "CfgVehicles" >> _type >> "lockedClass");
@@ -102,7 +102,8 @@ switch (_status) do {
 		_holder setVariable ["BackpackCargo",_backpacks,false];
 	};
 	case 2: { //Packing
-		_packedClass = getText (configFile >> "CfgVehicles" >> _type >> "packedClass");		
+		_packedClass = getText (configFile >> "CfgVehicles" >> _type >> "packedClass");
+		if (_packedClass == "") exitWith {diag_log format["Server_HandleSafeGear Error: invalid object type: %1",_type];};
 		_weapons = getWeaponCargo _obj;
 		_magazines = getMagazineCargo _obj;
 		_backpacks = getBackpackCargo _obj;
@@ -114,7 +115,7 @@ switch (_status) do {
 		_holder setDir _dir;
 		_holder setPosATL _pos;
 		_holder addMagazineCargoGlobal [getText(configFile >> "CfgVehicles" >> _packedClass >> "seedItem"),1];
-		[_weapons,_magazines,_backpacks,_holder] call server_addCargo;
+		[_weapons,_magazines,_backpacks,_holder] call fn_addCargo;
 		if (Z_singleCurrency && {_coins > 0}) then {
 			_wealth = _player getVariable [Z_MoneyVariable,0];
 			_player setVariable [Z_MoneyVariable,_wealth + _coins,true];
@@ -124,7 +125,7 @@ switch (_status) do {
 		};
 		
 		// Delete safe from database
-		[_objectID,_objectUID,_player] call server_deleteObj;
+		[_objectID,_objectUID] call server_deleteObjDirect;
 	};
 };
 
@@ -132,16 +133,17 @@ _fnc_lockCode = {
 	private ["_color","_code"];
 
 	if (_this == "") exitWith {0};
-	_color = "";
 	_code = if (typeName _this == "STRING") then {parseNumber _this} else {_this};
+	if (_code < 10000 || {_code > 10299}) exitWith {0};
+	_color = "";
 	_code = _code - 10000;
-	
-	if (_code <= 99) then {_color = localize "STR_TEAM_RED";};
-	if (_code >= 100 && _code <= 199) then {_color = localize "STR_TEAM_GREEN"; _code = _code - 100;};
-	if (_code >= 200) then {_color = localize "STR_TEAM_BLUE"; _code = _code - 200;};
+
+	if (_code <= 99) then {_color = "Red";};
+	if (_code >= 100 && _code <= 199) then {_color = "Green"; _code = _code - 100;};
+	if (_code >= 200) then {_color = "Blue"; _code = _code - 200;};
 	if (_code <= 9) then {_code = format["0%1", _code];};
 	_code = format ["%1%2",_color,_code];
-	
+
 	_code
 };
 

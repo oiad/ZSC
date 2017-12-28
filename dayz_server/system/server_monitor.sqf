@@ -357,6 +357,11 @@ diag_log format["HIVE: BENCHMARK - Server_monitor.sqf finished streaming %1 obje
 if (dayz_townGenerator) then {
 	call compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_plantSpawner.sqf"; // Draw the pseudo random seeds
 };
+#ifndef OBJECT_DEBUG
+	object_debug = false;
+#else
+	object_debug = true;
+#endif
 [] execFSM "\z\addons\dayz_server\system\server_vehicleSync.fsm"; 
 [] execVM "\z\addons\dayz_server\system\scheduler\sched_init.sqf"; // launch the new task scheduler
 
@@ -428,8 +433,8 @@ if (dayz_townGenerator) then {execVM "\z\addons\dayz_server\system\lit_fireplace
 "PVDZ_sec_atp" addPublicVariableEventHandler {
 	_x = _this select 1;
 	switch (1==1) do {
-		case (typeName (_x select 0) == "SCALAR") : { // just some logs from the client
-			diag_log (toString _x);
+		case (typeName _x == "STRING") : { // just some logs from the client
+			diag_log _x;
 		};
 		case (count _x == 2) : { // wrong side
 			diag_log format["P1ayer %1 reports possible 'side' hack. Server may be compromised!",(_x select 1) call fa_plr2Str];
@@ -439,7 +444,7 @@ if (dayz_townGenerator) then {execVM "\z\addons\dayz_server\system\lit_fireplace
 			_source = _x select 1;
 			if (!isNull _source) then {
 				diag_log format ["P1ayer %1 hit by %2 %3 from %4 meters in %5 for %6 damage",
-					_unit call fa_plr2Str, _source call fa_plr2Str, toString (_x select 2), _x select 3, _x select 4, _x select 5];
+					_unit call fa_plr2Str, if (!isPlayer _source && alive _source) then {"AI"} else {_source call fa_plr2Str}, _x select 2, _x select 3, _x select 4, _x select 5];
 			};
 		};
 	};
@@ -453,10 +458,10 @@ if (dayz_townGenerator) then {execVM "\z\addons\dayz_server\system\lit_fireplace
 	_uid = getPlayerUID _player;
 	_treeModel = _tree call fn_getModelName;
 
-	if ((_dis < 30) && (_treeModel in dayz_trees) && (_uid != "")) then {
+	if (_dis < 30 && (_treeModel in dayz_trees or (_treeModel in dayz_plant)) && (_uid != "")) then {
 		_tree setDamage 1;
 		dayz_choppedTrees set [count dayz_choppedTrees,_tree];
-		diag_log format["Server setDamage on tree %1 chopped down by %2(%3)",_treeModel,_name,_uid];
+		diag_log format["Server setDamage on tree or plant %1 chopped down by %2(%3)",_treeModel,_name,_uid];
 	};
 };
 

@@ -107,8 +107,6 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 1. Replace or merge the contents of <code>server_handleSafeGear.sqf</code> provided with your original copy.
 
-2. Replace or merge the contents of <code>server_updateObject.sqf</code> provided with your original copy.
-
 # Battleye filter install.
 
 1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> add this to the end of it:

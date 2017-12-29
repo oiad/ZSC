@@ -72,7 +72,7 @@ class GivePlayerDialog
 			idc = -1;
 			text = $STR_ZSC_GIVE;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[(ctrlText 14000)] spawn GivePlayerAmount; ((ctrlParent (_this select 0)) closeDisplay 9000);";
+			onButtonClick = "[(ctrlText 14000)] spawn GivePlayerAmount; closeDialog 0;";
 			colorText[] = {0.8784,0.8471,0.651,1};
 			x = 0.432;
 			y = 0.512;
@@ -92,7 +92,7 @@ class GivePlayerDialog
 		class CloseButtonKey2 : ZSC_RscButtonMenu {
 			idc = -1;
 			text = $STR_UI_CLOSE;
-			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 9000);";
+			onButtonClick = "closeDialog 0;";
 			x = 0.35;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);
@@ -179,7 +179,7 @@ class BankDialog
 			idc = -1;
 			text = $STR_ZSC_WITHDRAW;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[(ctrlText 2702)] spawn BankDialogWithdrawAmount; ((ctrlParent (_this select 0)) closeDisplay 9000);";
+			onButtonClick = "[(ctrlText 2702)] spawn BankDialogWithdrawAmount; closeDialog 0;";
 			colorText[] = {0.8784,0.8471,0.651,1};
 			x = 0.432;
 			y = 0.46;
@@ -192,7 +192,7 @@ class BankDialog
 			idc = -1;
 			text = $STR_ZSC_DEPOSIT;
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick =  "[(ctrlText 2702)] spawn BankDialogDepositAmount; ((ctrlParent (_this select 0)) closeDisplay 9000);";
+			onButtonClick =  "[(ctrlText 2702)] spawn BankDialogDepositAmount; closeDialog 0;";
 			colorText[] = {0.8784,0.8471,0.651,1};
 			x = 0.432;
 			y = 0.512;
@@ -225,7 +225,7 @@ class BankDialog
 		class CloseButtonKey : ZSC_RscButtonMenu {
 			idc = -1;
 			text = $STR_UI_CLOSE;
-			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 9000);";
+			onButtonClick = "closeDialog 0;";
 			x = 0.35;
 			y = 0.8 - (1 / 25);
 			w = (6.25 / 40);

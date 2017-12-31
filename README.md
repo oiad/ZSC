@@ -121,19 +121,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	5 createDialog <CUT> !="createDialog \"BankDialog\";" !="createDialog \"GivePlayerDialog\";"
 	```
 
-2. In your config\<yourServerName>\Battleye\scripts.txt around line 10: <code>5 closeDisplay</code> add this to the end of it:
-
-	```sqf
-	!="((ctrlParent (_this select 0)) closeDisplay 9000);"
-	```
-	
-	So it will then look like this for example:
-
-	```sqf
-	5 closeDisplay <CUT> !="((ctrlParent (_this select 0)) closeDisplay 9000);"
-	```
-
-3. In your config\<yourServerName>\Battleye\scripts.txt around line 51: <code>5 toString</code> add this to the end of it:
+2. In your config\<yourServerName>\Battleye\scripts.txt around line 51: <code>5 toString</code> add this to the end of it:
 
 	```sqf
 	!"_input = parseNumber (toString (_input));"
@@ -169,27 +157,13 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	#include "dayz_code\configs\zscATMdialogs.hpp"
 	```
 
-4. In mission\dayz_code\init\compiles.sqf find:
-	```sqf
-	fnc_usec_selfactions = compile preprocessFileLineNumbers "dayz_code\compile\fn_selfActions.sqf";
-	```
-	
-	and add directly below:
-	```sqf
-	player_humanityMorph = compile preprocessFileLineNumbers "dayz_code\compile\player_humanityMorph.sqf"; // This line can be removed when Epoch 1.0.6.2 comes out.
-	```
-	
-5. In mission\dayz_code\init\variables.sqf find:
+4. In mission\dayz_code\init\variables.sqf find:
 	```sqf
 	ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
 	```
 	
 	and add directly below:
 	```sqf
-	Z_bankVariable = "moneySpecial"; // If using single currency this is the variable name used to store object bank wealth.
-	Z_globalVariable = "GlobalMoney"; // If using single currency this is the variable name used to store coins globally.
-	//Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
-	
 	/*
 		IMPORTANT: The following 2 variables below are CASE SENSITIVE! If you don't put the object/trader classname EXACTLY how
 		they appear in game, THEY WILL NOT WORK!
@@ -201,9 +175,8 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	ZSC_maxBankMoney = 5000000; // Default limit for bank objects.
 	```
 
-6. Copy the following files to your mission folder preserving the directory structure:
+5. Copy the following files to your mission folder preserving the directory structure:
 	```sqf
-	dayz_code\compiles\player_humanityMorph.sqf
 	dayz_code\configs\zscATMdialogs.hpp
 	scripts\zsc\images\bank.paa
 	scripts\zsc\atmDialog.sqf
@@ -211,7 +184,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	scripts\zsc\zscATMInit.sqf
 	```
 	
-7. Battleye filters for global banking:
+6. Battleye filters for global banking:
 
 	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
 	```sqf
@@ -224,7 +197,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	5 "createDialog" <CUT> !"createDialog \"BankDialog\";" !"createDialog \"GivePlayerDialog\";" !"createDialog \"atmDialog\";"
 	```
 
-8. In infiSTARS AHConfig.sqf, If you have the following line set to true:
+7. In infiSTARS AHConfig.sqf, If you have the following line set to true:
 	```sqf
 	/*  Check Actions ?       */ _CSA = false;	/* true or false */	/* this checks mousewheel actions */
 	```
@@ -267,12 +240,16 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Changing so players don't lose coins on death (PVE weenies)
 
-1. In mission\dayz_code\init\variables.sqf find:
+1. In mission\dayz_code\init\variables.sqf find this line or similar relating to ZSC:
 	```sqf
-	//Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
+	ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
 	```
-	
-	Uncomment this line and coins will not be lost on death. You will also need to disable/remove check wallet as then players can get unlimited coins by constantly checking their body.
+
+	Add this line after it:
+	```sqf
+	Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
+	```
+	You will also need to disable/remove check wallet as then players can get unlimited coins by constantly checking their body.
 
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:
 

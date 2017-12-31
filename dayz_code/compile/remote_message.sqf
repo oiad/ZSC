@@ -13,11 +13,11 @@ fnc_remote_message = {
 				};
 			}; 
 		};
-		if (_type == "private")			exitWith {if(getPlayerUID player == (_message select 0)) then {systemChat (_message select 1);};};
+		if (_type == "private")			exitWith {if (dayz_playerUID == (_message select 0)) then {systemChat (_message select 1);};};
 		if (_type == "global")			exitWith {systemChat _message;};
-		if (_type == "hint") 			exitWith {hint _message;};
-		if (_type == "titleCut") 		exitWith {titleCut [_message,"PLAIN DOWN",3];};
-		if (_type == "titleText") 		exitWith {titleText [_message, "PLAIN DOWN"]; titleFadeOut 10;};
+		if (_type == "hint")			exitWith {hint _message;};
+		if (_type == "titleCut")		exitWith {titleCut [_message,"PLAIN DOWN",3];};
+		if (_type == "titleText")		exitWith {titleText [_message,"PLAIN DOWN"]; titleFadeOut 10;};
 		if (_type == "rollingMessages") exitWith {_message call dayz_rollingMessages;};
 		if (_type == "dynamic_text")	exitWith {
 			[

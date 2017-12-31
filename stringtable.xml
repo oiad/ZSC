@@ -101,7 +101,7 @@
 			<English>Transfer %1</English>
 			<German>%1 senden</German>
 			<!-- <Russian></Russian> -->
-			<French></French>
+			<French>Transférer %1</French>
 		</Key>
 		<Key ID="STR_ZSC_GIVE">
 			<English>Give</English>
@@ -149,7 +149,7 @@
 			<English>You have deposited %1 %2.</English>
 			<German>Du hast %1 %2 eingezahlt.</German>
 			<!-- <Russian></Russian> -->
-			<French> Vous avez déposé %1 %2</French>
+			<French>Vous avez déposé %1 %2</French>
 		</Key>
 		<Key ID="STR_ZSC_GLOBAL_BANK">
 			<English>Bank</English>

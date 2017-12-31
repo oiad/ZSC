@@ -11,7 +11,7 @@
 			<English>%1 is currently being banked with.</English>
 			<German>%1 ist bereits in Banking verwickelt.</German>
 			<!-- <Russian></Russian> -->
-			<French>%1 est présentement en banque avec .</French>
+			<French>%1 est présentement en banque avec.</French>
 		</Key>
 		<Key ID="STR_ZSC_NO_COINS">
 			<English>%1 has no %2</English>

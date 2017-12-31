@@ -65,7 +65,7 @@
 			<English>You can't deposit more %1 than what you have.</English>
 			<German>Du kannst nicht mehr %1 einzahlen als du hast.</German>
 			<!-- <Russian></Russian> -->
-			<French>Vous ne pouvez pas déposer plus %1 que vous avez </French>
+			<French>Vous ne pouvez pas déposer plus %1 que vous avez.</French>
 		</Key>
 		<Key ID="STR_ZSC_STORE_FAIL">
 			<English>You can only store a maximum of %1 %2 in the %3.</English>
@@ -131,7 +131,7 @@
 			<English>Storage</English>
 			<German>Lager</German>
 			<!-- <Russian></Russian> -->
-			<French> Stocker</French>
+			<French>Stocker</French>
 		</Key>
 		<Key ID="STR_ZSC_GLOBAL_WITHDRAW">
 			<English>You have withdrawn %1 %2.</English>

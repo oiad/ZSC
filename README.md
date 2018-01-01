@@ -129,7 +129,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 	So it will then look like this for example:
 
-	``sqf
+	```sqf
 	5 toString <CUT> !"_input = parseNumber (toString (_input));"
 	```
 
@@ -175,7 +175,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	ZSC_maxBankMoney = 5000000; // Default limit for bank objects.
 	```
 
-5. Copy the following files to your mission folder preserving the directory structure:
+5. Copy the following files from th github repo to your mission folder preserving the directory structure:
 	```sqf
 	dayz_code\configs\zscATMdialogs.hpp
 	scripts\zsc\images\bank.paa
@@ -214,7 +214,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 # Installing NPC based banks (optional)
 
-1. Copy the following directory to your dayz_server folder:
+1. Copy the following directory to your <code>Arma2 OA\\@dayz_epoch_server\addons\dayz_server</code> folder:
 	```sqf
 	dayz_server\bankTraders
 	```
@@ -238,19 +238,6 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	tavi.sqf
 	```
 
-# Changing so players don't lose coins on death (PVE weenies)
-
-1. In mission\dayz_code\init\variables.sqf find this line or similar relating to ZSC:
-	```sqf
-	ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
-	```
-
-	Add this line after it:
-	```sqf
-	Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
-	```
-	You will also need to disable/remove check wallet as then players can get unlimited coins by constantly checking their body.
-
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:
 
 1. In <code>dayz_code\configs</code> move or delete the folder <code>Category</code> and the file <code>cfgServerTrader.hpp</code> 
@@ -269,13 +256,26 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 2. Rename <code>server_traders - whatever-map-name.sqf</code> to <code>server_traders.sqf</code>
 
+# Changing so players don't lose coins on death (PVE weenies)
+
+1. In mission\dayz_code\init\variables.sqf find this line or similar relating to ZSC:
+	```sqf
+	ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
+	```
+
+	Add this line after it:
+	```sqf
+	Z_moneyVariable = "GlobalMoney"; // Uncomment this this to make it so players don't lose coins on death. Will need to disable checkWallet as you can dupe if you have this and check wallet running.
+	```
+	You will also need to disable/remove check wallet as then players can get unlimited coins by constantly checking their body.
+
 # Adding other classnames to the list of DZE_MoneyStorageClasses:
 
 1. In <code>dayz_code\init\variables.sqf</code> find: 
 	```sqf
 	DZE_MoneyStorageClasses = DZE_LockableStorage;
 	```
-	
+
 	and replace with (using Plastic_Pole_EP1_DZ as an example):
 
 	```sqf
@@ -288,24 +288,24 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	if !(_typeOf in DZE_MoneyStorageClasses) exitWith {
 	```
-	
+
 	and replace with:
 
 	```sqf
 	if !(ZSC_CurrentStorage isKindOf "AllVehicles") exitWith {
 	```
-	
+
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
 	```sqf
 	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && {!(_typeOfCursorTarget in DZE_LockedStorage)} && {player distance _cursorTarget < 5}) then {
 	```
-	
+
 	and replace with:
 
 	```sqf
 	if (_isVehicle && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && {player distance _cursorTarget < 5}) then {
 	```
-	
+
 3. dayz_server folder install:
 
 	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.

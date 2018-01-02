@@ -123,7 +123,7 @@
 			<French>Pas capable de lire la capacité du véhicule.</French>
 		</Key>
 		<Key ID="STR_ZSC_WITHDRAW_FAIL">
-			<English>You can not withdraw more %1 than are in the %2.</English>
+			<English>You can't withdraw more %1 than are in the %2.</English>
 			<German>Du kannst nicht mehr %1 abheben als in %2 sind.</German>
 			<!-- <Russian></Russian> -->
 			<French>Vous ne pouvez pas retirer plus %1 qu'il est dans %2.</French>

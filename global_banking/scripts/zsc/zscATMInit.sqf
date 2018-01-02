@@ -6,11 +6,11 @@ ATMDialogUpdateAmounts = {
 ATMDialogWithdrawAmount = {
 	private ["_amount","_bank","_wealth"];
 
-	_amount = (_this select 0) call fnc_sanitizeInput;	
+	_amount = (_this select 0) call fnc_sanitizeInput;
 	_bank = player getVariable [Z_bankVariable,0];
 	_wealth = player getVariable [Z_moneyVariable,0];
 
-	if ((_amount < 1) or {_amount > _bank}) exitWith {format [localize "STR_ZSC_WITHDRAW_FAIL",CurrencyName,_displayName] call dayz_rollingMessages;};
+	if ((_amount < 1) or {_amount > _bank}) exitWith {format [localize "STR_ZSC_WITHDRAW_FAIL",CurrencyName,toLower (localize "STR_ZSC_GLOBAL_BANK")] call dayz_rollingMessages;};
 
 	player setVariable [Z_moneyVariable,(_wealth + _amount),true];
 	player setVariable [Z_bankVariable,(_bank - _amount),true];

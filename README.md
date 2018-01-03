@@ -97,11 +97,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 5. Replace your original description.ext with the one provided or merge the contents if you have modified your own version.
 
-6. If you run ESSv3 spawn script (by [@ebayShopper](https://github.com/ebayShopper/ESSV3)) copy the supplied <code>stringtable - ZSC - ESSv3.xml</code> to your mission file directory and rename it to <code>stringTable.xml</code>
-
-7. If you run Virtual Garage (by [@oiad](https://github.com/oiad/virtualGarage)) copy the supplied <code>stringtable - ZSC - ESSv3 - VG.xml</code> to your mission file directory and rename it to <code>stringTable.xml</code>
-
-8. If you are not running ESSv3 or Virtual Garage copy the supplied <code>stringTable.xml</code> to your mission file directory
+6. Copy the supplied <code>stringTable.xml</code> to your mission folder, it is a community based localization file and contains translations for major community mods including this one. See https://github.com/oiad/communityLocalizations for more information.
 
 # dayz_server folder install:
 

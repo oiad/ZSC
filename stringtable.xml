@@ -163,26 +163,31 @@
 		</Key>
 		<Key ID="STR_ZSC_CHECK_WALLET">
 			<English>Check Wallet</English>
+			<German>Geldbeutel prüfen</German>
 			<!-- <Russian></Russian> -->
 			<French>Vérifier le Portefeuille</French>
 		</Key>
 		<Key ID="STR_ZSC_ACCESS_BANK">
 			<English>Access Bank</English>
+			<German>Auf Bank zugreifen</German>
 			<!-- <Russian></Russian> -->
 			<French>Accédez votre banque</French>
 		</Key>
 		<Key ID="STR_ZSC_TRADE_COINS">
 			<English>Trade %1 with %2</English>
+			<German>%1 mit %2 handeln</German>
 			<!-- <Russian></Russian> -->
 			<French>Échanger %1 avec %2</French>
 		</Key>
 		<Key ID="STR_ZSC_BANK_TELLER">
 			<English>Bank Teller</English>
+			<German>Bankangestellter</German>
 			<!-- <Russian></Russian> -->
 			<French>Caissier de la banque</French>
 		</Key>
 		<Key ID="STR_ZSC_BANK_ATM">
 			<English>Bank ATM</English>
+			<German>Geldautomat</German>
 			<!-- <Russian></Russian> -->
 			<French>Guichet</French>
 		</Key>

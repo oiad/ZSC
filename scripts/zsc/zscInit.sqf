@@ -103,7 +103,7 @@ GivePlayerAmount = {
 	_isBusy = ZSC_GiveMoneyTarget getVariable ["isBusy",false];
 	_vehicleType = typeOf ZSC_GiveMoneyTarget; 
 
-	if ((_amount < 1) or {_amount > _wealth}) exitWith {localize "STR_ZSC_GIVE_FAIL" call dayz_rollingMessages;};
+	if ((_amount < 1) or {_amount > _wealth}) exitWith {format [localize "STR_ZSC_GIVE_FAIL",CurrencyName] call dayz_rollingMessages;};
 
 	if (!(isPlayer ZSC_GiveMoneyTarget)) exitWith {format [localize "STR_ZSC_GIVE_PLAYER",CurrencyName] call dayz_rollingMessages;};
 

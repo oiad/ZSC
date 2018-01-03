@@ -330,10 +330,10 @@
 			<French>Vous avez déposé %1 %2 dans votre %3.</French>
 		</Key>
 		<Key ID="STR_ZSC_GIVE_FAIL">
-			<English>You can not give more than you currently have.</English>
-			<German>Du kannst nicht mehr geben als du gerade hast.</German>
+			<English>You can not give more %1 than you currently have.</English>
+			<German>Du kannst nicht mehr %1 geben als du gerade hast.</German>
 			<!-- <Russian></Russian> -->
-			<French>Vous ne pouvez pas donner plus que vous avez.</French>
+			<French>Vous ne pouvez pas donner %1 plus que vous avez.</French>
 		</Key>
 		<Key ID="STR_ZSC_GIVE_PLAYER">
 			<English>You can only give %1 to a player.</English>

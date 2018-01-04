@@ -45,7 +45,7 @@ class CfgSounds
 };
 
 class RscTitles {
-    #include "dayz_code\configs\zschud.hpp"
+    #include "scripts\zsc\playerHud.hpp"
 	class wm_disp {
 		idd = -1;
 		onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
@@ -86,4 +86,5 @@ class RscTitles {
 
 #include "\z\addons\dayz_code\Configs\RscDisplay\ZSCdefines.hpp"
 #include "dayz_code\configs\RscDisplay\advancedTrading.hpp"
-#include "dayz_code\configs\zscdialogs.hpp"
+#include "scripts\zsc\zsc.hpp"
+

@@ -10,7 +10,6 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * Lots of code snippets taken from the original Zupa release thread to stop multiple people checking wallet/depositing into the same safe etc.
 * Supports multiple configuration types, Safes/lockboxes only, vehicles only, safes/lockboxes AND vehicles.
 * Supports any map, currently only has server_traders files for Chernarus (default), napf and tavi.
-* To install global banking: https://github.com/oiad/ZSC#changing-to-global-banking
 
 # Thanks to:
 * Zupa for his awesome script being a really good base to start from.
@@ -22,7 +21,6 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 * [Mission folder install](https://github.com/oiad/ZSC#mission-folder-install)
 * [dayz_server folder install](https://github.com/oiad/ZSC#dayz_server-folder-install)
 * [Battleye filter install](https://github.com/oiad/ZSC#battleye-filter-install)
-* [Changing to global banking](https://github.com/oiad/ZSC#changing-to-global-banking)
 * [Installing NPC based banks (optional)](https://github.com/oiad/ZSC#installing-npc-based-banks-optional)
 * [Changing so players don't lose coins on death (PVE weenies)](https://github.com/oiad/ZSC#changing-so-players-dont-lose-coins-on-death-pve-weenies)
 * [Changing from default epoch CfgTraders to OverWatch CfgTraders](https://github.com/oiad/ZSC#changing-from-default-epoch-cfgtraders-to-overwatch-cfgtraders)
@@ -103,6 +101,43 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 1. Replace or merge the contents of <code>server_handleSafeGear.sqf</code> provided with your original copy.
 
+# Changing to global banking:
+
+1. In mission\dayz_code\init\variables.sqf find:
+	```sqf
+	Z_globalBanking = false; // Enable global banking? Disabled by default.
+	```
+	and change to true
+	```sqf
+	
+2. Battleye filters for global banking:
+
+	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
+	```sqf
+	!"createDialog \"atmDialog\";"
+	```
+
+	So it will then look like this for example:
+
+	```sqf
+	5 "createDialog" <CUT> !"createDialog \"BankDialog\";" !"createDialog \"GivePlayerDialog\";" !"createDialog \"atmDialog\";"
+	```
+
+3. In infiSTARS AHConfig.sqf, If you have the following line set to true:
+	```sqf
+	/*  Check Actions ?       */ _CSA = false;	/* true or false */	/* this checks mousewheel actions */
+	```
+	
+	Then you will need to find this line in AHConfig.sqf:
+	```sqf
+	"r_player_actions2","s_bank_dialog","s_bank_dialog2","s_build_Hedgehog_DZ","s_build_Sandbag1_DZ","s_build_Wire_cat1","s_building_snapping",
+	```
+	
+	And replace it with this line:
+	```sqf
+	"r_player_actions2","s_bank_dialog","s_bank_dialog1","s_bank_dialog2","s_build_Hedgehog_DZ","s_build_Sandbag1_DZ","s_build_Wire_cat1","s_building_snapping",
+	```
+
 # Battleye filter install.
 
 1. In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> add this to the end of it:
@@ -127,85 +162,6 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 	```sqf
 	5 toString <CUT> !"_input = parseNumber (toString (_input));"
-	```
-
-# Changing to global banking:
-
-1. Install ZSC as above to use as a base, global banking is a modular based install so ZSC is required.
-
-2. In mission\init.sqf find:
-	```sqf
-	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
-	```
-	
-	and add directly below:
-	```sqf
-	call compile preprocessFileLineNumbers "scripts\zsc\zscATMInit.sqf";
-	```
-
-3. In mission\description.ext find:
-	```sqf
-	#include "dayz_code\configs\zscDialogs.hpp"
-	```
-	
-	and add directly below:
-	```sqf
-	#include "dayz_code\configs\zscATMdialogs.hpp"
-	```
-
-4. In mission\dayz_code\init\variables.sqf find:
-	```sqf
-	ZSC_MaxMoneyInStorageMultiplier = 50000; // Multiplier for how much money a bank object can hold, example: 200 magazine slots in the object (or the default value above ^^) multiplied by the 50,000 multiplier is 10 million coin storage. (200*50000=10m coins)
-	```
-	
-	and add directly below:
-	```sqf
-	/*
-		IMPORTANT: The following 2 variables below are CASE SENSITIVE! If you don't put the object/trader classname EXACTLY how
-		they appear in game, THEY WILL NOT WORK!
-	*/
-
-	ZSC_bankObjects = [""]; // Array of objects that are available for banking (i.e Suitcase, Info_Board_EP1)
-	ZSC_bankTraders = ["Functionary1_EP1_DZ"]; // Array of trader classnames that are available for banking (i.e Functionary1_EP1_DZ)
-	ZSC_limitOnBank = true; // Have a limit on the bank? (i.e true or false) limits the global banking to the number below.
-	ZSC_maxBankMoney = 5000000; // Default limit for bank objects.
-	```
-
-5. Copy the following files from th github repo to your mission folder preserving the directory structure:
-	```sqf
-	dayz_code\configs\zscATMdialogs.hpp
-	scripts\zsc\images\bank.paa
-	scripts\zsc\atmDialog.sqf
-	scripts\zsc\playerHud.sqf
-	scripts\zsc\zscATMInit.sqf
-	```
-	
-6. Battleye filters for global banking:
-
-	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:
-	```sqf
-	!"createDialog \"atmDialog\";"
-	```
-
-	So it will then look like this for example:
-
-	```sqf
-	5 "createDialog" <CUT> !"createDialog \"BankDialog\";" !"createDialog \"GivePlayerDialog\";" !"createDialog \"atmDialog\";"
-	```
-
-7. In infiSTARS AHConfig.sqf, If you have the following line set to true:
-	```sqf
-	/*  Check Actions ?       */ _CSA = false;	/* true or false */	/* this checks mousewheel actions */
-	```
-	
-	Then you will need to find this line in AHConfig.sqf:
-	```sqf
-	"r_player_actions2","s_bank_dialog","s_bank_dialog2","s_build_Hedgehog_DZ","s_build_Sandbag1_DZ","s_build_Wire_cat1","s_building_snapping",
-	```
-	
-	And replace it with this line:
-	```sqf
-	"r_player_actions2","s_bank_dialog","s_bank_dialog1","s_bank_dialog2","s_build_Hedgehog_DZ","s_build_Sandbag1_DZ","s_build_Wire_cat1","s_building_snapping",
 	```
 
 # Installing NPC based banks (optional)
@@ -333,6 +289,17 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 3. dayz_server folder install:
 
 	Replace or merge the contents of <code>dayz_server\system\server_monitor.sqf</code> provided with your original copy.
+	
+	In <code>dayz_server\system\server_monitor.sqf</code> find:
+	```sqf
+	if (Z_SingleCurrency && {_type in DZE_MoneyStorageClasses}) then {
+	```
+
+	and replace with:
+
+	```sqf
+	if (Z_SingleCurrency && {(_type in DZE_MoneyStorageClasses) || (_object isKindOf "AllVehicles")}) then {
+	```
 	
 # Giving NEW players coins on their first login:
 

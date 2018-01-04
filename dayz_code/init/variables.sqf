@@ -1,4 +1,5 @@
 Z_singleCurrency = true;
+Z_globalBanking = false; // Enable global banking? Disabled by default.
 
 DZE_maintainCurrencyRate = 1000;
 

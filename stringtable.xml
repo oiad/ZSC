@@ -401,7 +401,7 @@
 		</Key>
 		<Key ID="STR_ZSC_GIVE_OK">
 			<English>You gave %1 %2 %3.</English>
-			<German>Du hast %1 2% 3% gegeben.</German>
+			<German>Du hast %1 %2 %3 gegeben.</German>
 			<Russian>Вы передали %1 %2 %3</Russian>
 			<French>Vous avez donné %1 %2 %3.</French>
 			<Spanish>Le diste %1 %2 %3.</Spanish>

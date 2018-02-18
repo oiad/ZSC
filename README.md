@@ -249,13 +249,13 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
 	```sqf
-	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && {!(_typeOfCursorTarget in DZE_LockedStorage)} && {player distance _cursorTarget < 5}) then {
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!_isLocked} && {!(_typeOfCursorTarget in DZE_LockedStorage)}) then {
 	```
 
 	and replace with:
 
 	```sqf
-	if (_isVehicle && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && {player distance _cursorTarget < 5}) then {
+	if (_isVehicle && {!_isMan} && {!_isLocked} && {_isAlive}) then {
 	```
 
 3. dayz_server folder install:
@@ -277,13 +277,13 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 2. In <code>dayz_code\compile\fn_selfActions.sqf</code> find: 
 	```sqf
-	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!locked _cursorTarget} && {!(_typeOfCursorTarget in DZE_LockedStorage)} && {player distance _cursorTarget < 5}) then {
+	if (_typeOfCursorTarget in DZE_MoneyStorageClasses && {!_isLocked} && {!(_typeOfCursorTarget in DZE_LockedStorage)}) then {
 	```
 	
 	and replace with:
 
 	```sqf
-	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!locked _cursorTarget} && {_isAlive} && !(_typeOfCursorTarget in DZE_LockedStorage) && {player distance _cursorTarget < 5}) then {
+	if ((_typeOfCursorTarget in DZE_MoneyStorageClasses || _isVehicle) && {!_isMan} && {!_isLocked} && {_isAlive} && {!(_typeOfCursorTarget in DZE_LockedStorage)}) then {
 	```
 	
 3. dayz_server folder install:

@@ -134,9 +134,13 @@ if (!isDedicated) then {
 	execFSM "\z\addons\dayz_code\system\player_monitor.fsm";
 	//[false,12] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
 	if (DZE_R3F_WEIGHT) then {execVM "\z\addons\dayz_code\external\R3F_Realism\R3F_Realism_Init.sqf";};
-	call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
-	execVM "scripts\zsc\playerHud.sqf";
-	execVM "dayz_code\compile\remote_message.sqf";
+
+	if (Z_singleCurrency) then {
+		call compile preprocessFileLineNumbers "scripts\zsc\zscInit.sqf";
+		execVM "scripts\zsc\playerHud.sqf";
+		execVM "dayz_code\compile\remote_message.sqf";
+	};
+
 	waitUntil {scriptDone progress_monitor};
 	cutText ["","BLACK IN", 3];
 	3 fadeSound 1;

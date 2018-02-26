@@ -95,7 +95,9 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 5. Replace your original description.ext with the one provided or merge the contents if you have modified your own version.
 
-6. Copy the supplied <code>stringTable.xml</code> to your mission folder, it is a community based localization file and contains translations for major community mods including this one. See https://github.com/oiad/communityLocalizations for more information.
+6. Download the <code>stringTable.xml</code> file linked below from the [Community Localization GitHub](https://github.com/oiad/communityLocalizations) and copy it to your mission folder, it is a community based localization file and contains translations for major community mods including this one.
+
+**[>> Download stringTable.xml <<](https://github.com/oiad/communityLocalizations/blob/master/stringtable.xml)**
 
 # dayz_server folder install:
 

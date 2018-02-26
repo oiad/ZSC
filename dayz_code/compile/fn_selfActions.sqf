@@ -13,7 +13,7 @@ private ["_canPickLight","_text","_unlock","_lock","_totalKeys","_temp_keys","_t
 "_isModular","_isModularDoor","_isHouse","_isGateOperational","_isGateLockable","_isFence","_isLockableGate","_isUnlocked","_isOpen","_isClosed","_ownerArray","_ownerBuildLock",
 "_ownerPID","_speed","_dog","_vehicle","_inVehicle","_cursorTarget","_primaryWeapon","_currentWeapon","_magazinesPlayer","_onLadder","_canDo",
 "_nearLight","_vehicleOwnerID","_hasHotwireKit","_isPZombie","_dogHandle","_allowedDistance","_id","_upgrade","_weaponsPlayer","_hasCrowbar",
-"_allowed","_hasAccess","_uid","_myCharID","_isLocked"];
+"_allowed","_hasAccess","_uid","_myCharID","_isLocked","_isClose"];
 
 _vehicle = vehicle player;
 _inVehicle = (_vehicle != player);
@@ -23,7 +23,6 @@ _currentWeapon = currentWeapon player;
 _magazinesPlayer = magazines player;
 _onLadder = (getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _canDo = (!r_drag_sqf && !r_player_unconscious && !_onLadder);
-//_canDrink = count nearestObjects [getPosATL player, ["Land_pumpa","Land_water_tank"], 2] > 0;
 _uid = getPlayerUID player;
 _nearLight = nearestObject [player,"LitObject"];
 _canPickLight = false;
@@ -31,6 +30,7 @@ _myCharID = player getVariable ["CharacterID","0"];
 _vehicleOwnerID = _vehicle getVariable ["CharacterID","0"];
 _hasHotwireKit = "ItemHotwireKit" in _magazinesPlayer;
 _isPZombie = player isKindOf "PZombie_VB";
+_isClose = (player distance _cursorTarget < 3);
 _dogHandle = player getVariable ["dogID",0];
 
 if (!isNull _nearLight) then {
@@ -69,17 +69,6 @@ if (s_player_equip_carry < 0) then {
 	};
 };
 
-/*if (dayz_onBack != "" /*&& !dayz_onBackActive && !_inVehicle && !_onLadder && !r_player_unconscious) then {
-	if (s_player_equip_carry < 0) then {
-		_text = getText (configFile >> "CfgWeapons" >> dayz_onBack >> "displayName");
-		s_player_equip_carry = player addAction [format[localize "STR_ACTIONS_WEAPON", _text], "\z\addons\dayz_code\actions\player_switchWeapon_action.sqf", nil, 0.5, false, true];
-	};
-} else {
-	player removeAction s_player_equip_carry;
-	s_player_equip_carry = -1;
-};*/
-
-//fishing
 if ((_currentWeapon in Dayz_fishingItems) && {!dayz_fishingInprogress} && {!_inVehicle} && {!dayz_isSwimming}) then {
 	if (s_player_fishing < 0) then {
 		s_player_fishing = player addAction [localize "STR_ACTION_CAST", "\z\addons\dayz_code\actions\player_goFishing.sqf",player, 0.5, false, true];
@@ -199,7 +188,7 @@ if (_isPZombie) then {
 	if (s_player_pzombiesvision < 0) then {
 		s_player_pzombiesvision = player addAction [localize "STR_EPOCH_ACTIONS_NIGHTVIS", "\z\addons\dayz_code\actions\pzombie\pz_vision.sqf", [], 4, false, true, "nightVision", "_this == _target"];
 	};
-	if (!isNull _cursorTarget && (player distance _cursorTarget < 3)) then {
+	if (!isNull _cursorTarget && _isClose) then {
 		_isZombie = _cursorTarget isKindOf "zZombie_base";
 		_isHarvested = _cursorTarget getVariable["meatHarvested",false];
 		_isMan = _cursorTarget isKindOf "Man"; //includes animals and zombies
@@ -476,18 +465,6 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
-/*	
-	//Carbomb
-	_hasCarBomb = "ItemCarBomb" in _magazinesPlayer;
-	if (((_cursorTarget isKindOf "Car") || (_cursorTarget isKindOf "Air") || (_cursorTarget isKindOf "Motorcycle")) && _hasCarBomb) then {
-		if (s_player_attach_bomb < 0) then {
-			s_player_attach_bomb = player addAction [localize "str_bombAttach", "\z\addons\dayz_code\actions\player_attach_bomb.sqf",_cursorTarget, 3, true, true];
-		};
-	} else {
-			player removeAction s_player_attach_bomb;
-			s_player_attach_bomb = -1;
-	};
-*/
 	//Repairing Vehicles
 	if (_isVehicle && {!_isMan} && {dayz_myCursorTarget != _cursorTarget} && {_hasToolbox} && {damage _cursorTarget < 1} && {_typeOfCursorTarget != "M240Nest_DZ"}) then {
 		if (s_player_repair_crtl < 0) then {
@@ -641,7 +618,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 	};
 
 	//Allow owner to unlock vault
-	if ((_typeOfCursorTarget in DZE_LockableStorage) && {_characterID != "0"} && {player distance _cursorTarget < 3} && {!keypadCancel}) then {
+	if ((_typeOfCursorTarget in DZE_LockableStorage) && {_characterID != "0"} && {_isClose} && {!keypadCancel}) then {
 		if (s_player_unlockvault < 0) then {
 			if (_typeOfCursorTarget in DZE_LockedStorage) then {
 				if (_characterID == dayz_combination || _ownerID == _uid) then {
@@ -666,7 +643,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 	};
 
 	//Allow owner to pack vault
-	if ((_typeOfCursorTarget in DZE_UnLockedStorage) && {_characterID != "0"} && {player distance _cursorTarget < 3}  && {!keypadCancel}) then {
+	if ((_typeOfCursorTarget in DZE_UnLockedStorage) && {_characterID != "0"} && {_isClose}  && {!keypadCancel}) then {
 		if (s_player_lockvault < 0) then {
 			if (_characterID == dayz_combination || _ownerID == _uid) then {
 				s_player_lockvault = player addAction [format[localize "STR_EPOCH_ACTIONS_LOCK",_text], "\z\addons\dayz_code\actions\vault_lock.sqf",_cursorTarget, 0, false, true];

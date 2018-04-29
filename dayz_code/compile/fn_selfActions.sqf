@@ -818,7 +818,7 @@ if (!isNull _cursorTarget && !_inVehicle && !_isPZombie && (player distance _cur
 		if (Z_globalBanking) then {
 			if (_isMan && {!(isPlayer _cursorTarget)} && {_typeOfCursorTarget in ZSC_bankTraders}) then {
 				if (s_bank_dialog1 < 0) then {
-					s_bank_dialog1 = player addAction [localize "STR_CL_ZSC_BANK_TELLER","scripts\zsc\atmDialog.sqf",_cursorTarget,3,true,true];
+					s_bank_dialog1 = player addAction [format["<t color='#0059FF'>%1</t>",localize "STR_CL_ZSC_BANK_TELLER"],"scripts\zsc\atmDialog.sqf",_cursorTarget,3,true,true];
 				};
 			} else {
 				player removeAction s_bank_dialog1;

@@ -183,6 +183,11 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	if (Z_singleCurrency && {Z_globalBanking && Z_globalBankingTraders}) then {execVM "\z\addons\dayz_server\bankTraders\init.sqf";}; // Add global banking agents
 	```
 
+3. In <code>dayz_code\init\variables.sqf</code> change the following line to <code>true</code>
+	```sqf
+	Z_globalBankingTraders = false; // Enable global banking traders at trader cities? Disabled by default.
+	```
+
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:
 
 1. In <code>dayz_code\configs</code> move or delete the folder <code>Category</code> and the file <code>cfgServerTrader.hpp</code> 

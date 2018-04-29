@@ -180,16 +180,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	
 	add this line directly below:
 	```sqf
-	execVM "\z\addons\dayz_server\bankTraders\chernarus.sqf"; //Add banking agents
-	```
-	You can chose from the following files depending on your map:
-	```sqf
-	chernarus.sqf
-	lingor.sqf
-	namalsk.sqf
-	napf.sqf
-	panthera.sqf
-	tavi.sqf
+	if (Z_singleCurrency && {Z_globalBanking && Z_globalBankingTraders}) then {execVM "\z\addons\dayz_server\bankTraders\init.sqf";}; // Add global banking agents
 	```
 
 # Changing from default epoch CfgTraders to OverWatch CfgTraders:

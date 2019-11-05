@@ -95,7 +95,7 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 5. Replace your original description.ext with the one provided or merge the contents if you have modified your own version.
 
-6. Download the <code>stringTable.xml</code> file linked below from the [Community Localization GitHub](https://github.com/oiad/communityLocalizations) and copy it to your mission folder, it is a community based localization file and contains translations for major community mods including this one.
+6. **Download the <code>stringTable.xml</code> file linked below from the [Community Localization GitHub](https://github.com/oiad/communityLocalizations) and copy it to your mission folder, it is a community based localization file and contains translations for major community mods including this one.**
 
 **[>> Download stringTable.xml <<](https://github.com/oiad/communityLocalizations/blob/master/stringTable.xml)**
 
@@ -109,9 +109,11 @@ Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 	```sqf
 	Z_globalBanking = false; // Enable global banking? Disabled by default.
 	```
-	and change to true
+	and change to true so it looks like this:
 	```sqf
-	
+	Z_globalBanking = true; // Enable global banking? Disabled by default.
+	```
+
 2. Battleye filters for global banking:
 
 	In your config\<yourServerName>\Battleye\scripts.txt around line 12: <code>5 createDialog</code> or <code>5 "createDialog"</code> add this to the end of it:

@@ -1,4 +1,6 @@
-# [EPOCH 1.0.6+] Zupa Single Currency
+# Outdated, already built into Epoch 1.0.7
+
+# [EPOCH 1.0.6.2] Zupa Single Currency
 Zupas Single Currency script updated for Epoch 1.0.6+ by salival.
 
 * Discussion URL: https://epochmod.com/forum/topic/43331-zsc-for-epoch-106-and-overwatch-025/
